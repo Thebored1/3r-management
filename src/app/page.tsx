@@ -192,6 +192,7 @@ export default function Home() {
 
       {/* Header */}
       <header
+        className="header-container"
         style={{
           position: "sticky",
           top: 0,
@@ -214,6 +215,7 @@ export default function Home() {
           priority
         />
         <nav
+          className="hide-on-mobile"
           style={{
             display: "flex",
             alignItems: "center",
@@ -312,9 +314,8 @@ export default function Home() {
       {/* Hero */}
       <section style={{ padding: "64px 40px 48px" }}>
         <div
+          className="grid-hero"
           style={{
-            display: "grid",
-            gridTemplateColumns: "1.35fr .65fr",
             gap: 48,
             alignItems: "end",
             marginBottom: 40,
@@ -349,9 +350,8 @@ export default function Home() {
               Champions of a zero-waste society
             </div>
             <h1
-              className="font-heading"
+              className="font-heading text-hero"
               style={{
-                fontSize: 76,
                 lineHeight: 1.02,
                 letterSpacing: "-.03em",
                 fontWeight: 400,
@@ -466,7 +466,7 @@ export default function Home() {
               <div>
                 <div
                   className="font-heading"
-                  style={{ fontSize: 34, fontWeight: 400, lineHeight: 1 }}
+                  className="text-large" style={{ fontWeight: 400, lineHeight: 1 }}
                 >
                   5%
                 </div>
@@ -478,7 +478,7 @@ export default function Home() {
               <div>
                 <div
                   className="font-heading"
-                  style={{ fontSize: 34, fontWeight: 400, lineHeight: 1 }}
+                  className="text-large" style={{ fontWeight: 400, lineHeight: 1 }}
                 >
                   2030
                 </div>
@@ -492,7 +492,7 @@ export default function Home() {
       </section>
 
       {/* Vision & Mission */}
-      <section style={{ padding: "72px 40px" }}>
+      <section className="section-padding">
         <div
           style={{
             display: "grid",
@@ -1323,11 +1323,7 @@ export default function Home() {
             </a>
           </div>
           <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "1fr 1fr",
-              gap: 20,
-            }}
+            className="grid-2" style={{ gap: 20 }}
           >
             {expertise.map((e, idx) => (
               <div
