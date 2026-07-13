@@ -82,7 +82,7 @@ export default function Home({
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
   return (
-    <div style={{ maxWidth: 1280, margin: '0 auto', background: '#f5f4f0', boxShadow: '0 0 80px rgba(0,0,0,.06)', overflow: 'hidden', '--hf': hf } as React.CSSProperties}>
+    <div className="animate-load" style={{ maxWidth: 1280, margin: '0 auto', background: '#f5f4f0', boxShadow: '0 0 80px rgba(0,0,0,.06)', overflow: 'hidden', '--hf': hf } as React.CSSProperties}>
       {/* Top bar */}
       {showTopBar && (
         <div className="m-topbar" style={{ background: '#16241c', color: '#cbc9c1', display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '9px 40px', fontSize: 12.5, letterSpacing: '.01em' }}>

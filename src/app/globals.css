@@ -12,6 +12,13 @@ img { display: block; max-width: 100%; }
 .r-underline { background-image: linear-gradient(currentColor,currentColor); background-size: 0% 1.5px; background-repeat: no-repeat; background-position: 0 100%; transition: background-size .3s ease; }
 .r-underline:hover { background-size: 100% 1.5px; }
 
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-load {
+  animation: fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
 @media (max-width: 860px) {
   .m-stack { grid-template-columns: 1fr !important; }
   .m-sec { padding-left: 20px !important; padding-right: 20px !important; }
