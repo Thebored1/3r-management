@@ -528,7 +528,15 @@ export default function Home() {
                 }}
               >
                 We use cookies to ensure you get the best experience on our
-                platform.
+                platform. Read our{" "}
+                <a
+                  href="#footer"
+                  style={{ color: "#2f7d4f", fontWeight: 500 }}
+                  className="r-underline"
+                >
+                  Privacy Policy
+                </a>{" "}
+                to learn more.
               </p>
               <div
                 style={{
