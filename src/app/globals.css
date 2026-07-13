@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #eceae4;
+  --foreground: #16241c;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Adjust these later if dark mode is needed, for now stick to the design */
+    --background: #eceae4;
+    --foreground: #16241c;
+  }
+}
+
+* { 
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; 
+}
+
+body { 
+  background: var(--background); 
+  font-family: var(--font-instrument-sans), 'Instrument Sans', sans-serif; 
+  color: var(--foreground); 
+  -webkit-font-smoothing: antialiased; 
+}
+
+.font-heading {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 500;
+}
+
+a { 
+  color: #1f5836; 
+  text-decoration: none; 
+}
+a:hover { 
+  color: #16241c; 
+}
+img { 
+  display: block; 
+  max-width: 100%; 
+}
+::selection { 
+  background: #cbe3d1; 
+}
+
+@keyframes floaty { 
+  0%, 100% { transform: translateY(0); } 
+  50% { transform: translateY(-14px); } 
+}
+.animate-floaty {
+  animation: floaty 6s ease-in-out infinite;
+}
+
+.r-hover-lift { 
+  transition: transform .35s cubic-bezier(.2,.7,.3,1), box-shadow .35s ease; 
+}
+.r-hover-lift:hover { 
+  transform: translateY(-6px); 
+}
+
+.r-underline { 
+  background-image: linear-gradient(currentColor,currentColor); 
+  background-size: 0% 1.5px; 
+  background-repeat: no-repeat; 
+  background-position: 0 100%; 
+  transition: background-size .3s ease; 
+}
+.r-underline:hover { 
+  background-size: 100% 1.5px; 
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
