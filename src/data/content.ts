@@ -6,21 +6,21 @@ export const data = {
     { v: '800 TPD', l: 'Amritsar — active today' }
   ],
   solutions: [
-    { t: 'Integrated Waste Management', tag: 'Flagship capability', d: 'City-wide systems — collection to scientific disposal — under one PPP/concession framework.', img: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=700&q=80&auto=format&fit=crop' },
+    { t: 'Integrated Waste Management', tag: 'Flagship capability', d: 'City-wide systems — collection to scientific disposal — under one PPP/concession framework.', img: '/images/integrated-swm.webp' },
     { t: 'Collection & Transportation', tag: '', d: 'Structured, route-optimised fleet operations tracked via RouteHub in real time.', img: '/assets/collection.png' },
-    { t: 'Bio-CNG / CBG Plants', tag: '', d: 'Organic waste converted to compressed biogas — clean energy from waste, at scale.', img: 'https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=700&q=80&auto=format&fit=crop' },
-    { t: 'Composting & MRFs', tag: '', d: 'Aerobic composting and material recovery — diverting waste from landfill, creating value.', img: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=700&q=80&auto=format&fit=crop' },
-    { t: 'Scientific Landfills', tag: '', d: 'Engineered lined landfills with leachate treatment, gas management, and environmental monitoring.', img: 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=700&q=80&auto=format&fit=crop' },
-    { t: 'Sanitation & Wastewater', tag: '', d: 'Loop smart utility pods and ULB wastewater treatment — connected to Ecosmartly.', img: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=700&q=80&auto=format&fit=crop' }
+    { t: 'Bio-CNG / CBG Plants', tag: '', d: 'Organic waste converted to compressed biogas — clean energy from waste, at scale.', img: '/images/unsplash-4.jpg' },
+    { t: 'Composting & MRFs', tag: '', d: 'Aerobic composting and material recovery — diverting waste from landfill, creating value.', img: '/images/composting.jpg' },
+    { t: 'Scientific Landfills', tag: '', d: 'Engineered lined landfills with leachate treatment, gas management, and environmental monitoring.', img: '/images/landfill.jpeg' },
+    { t: 'Sanitation & Wastewater', tag: '', d: 'Loop smart utility pods and ULB wastewater treatment — connected to Ecosmartly.', img: '/images/sanitation.jpg' }
   ],
   gallery: [
-    { img: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=700&q=80&auto=format&fit=crop', cap: 'LEH & KARGIL · HIGH-ALTITUDE SWM' },
-    { img: 'https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?w=700&q=80&auto=format&fit=crop', cap: 'CBG · BIOENERGY FEEDSTOCK' },
-    { img: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=700&q=80&auto=format&fit=crop', cap: 'AMRITSAR · SILVASSA · INTEGRATED SWM' }
+    { img: '/images/composting.jpg', cap: 'LEH & KARGIL · HIGH-ALTITUDE SWM' },
+    { img: '/images/unsplash-3.jpg', cap: 'CBG · BIOENERGY FEEDSTOCK' },
+    { img: '/images/amritsar.webp', cap: 'AMRITSAR · SILVASSA · INTEGRATED SWM' }
   ],
   recognition: [
-    { img: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=700&q=80&auto=format&fit=crop', tag: '2019 · SILVASSA', title: "Prime Minister's Inauguration — Silvassa SWM Project", desc: 'The Silvassa Integrated SWM project was inaugurated by PM Narendra Modi — recognised as the fastest-delivered integrated waste management project in India. PM recently appreciated Silvassa as a model bin-free city, a testament to 7 years of continuous operational excellence by 3R.', badge: '★ PM Inaugurated · Bin-Free City Recognition' },
-    { img: 'https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?w=700&q=80&auto=format&fit=crop', tag: 'INDIA TODAY SUMMIT', title: 'Garbage Guru Award — India Today', desc: "Awarded the Garbage Guru Award by India Today, presented by Shri Nitin Gadkari — then Union Minister for Road Transport & Highways. Recognised for 3R's transformative contributions to waste management in India and its role in shaping the country's integrated SWM landscape.", badge: '★ India Today · Presented by Nitin Gadkari' }
+    { img: '/assets/silvassa-swm-logo.png', tag: '2019 · SILVASSA', title: "Prime Minister's Inauguration — Silvassa SWM Project", desc: 'The Silvassa Integrated SWM project was inaugurated by PM Narendra Modi — recognised as the fastest-delivered integrated waste management project in India. PM recently appreciated Silvassa as a model bin-free city, a testament to 7 years of continuous operational excellence by 3R.', badge: '★ PM Inaugurated · Bin-Free City Recognition' },
+    { img: '/assets/cleanliness-award-2024.png', tag: 'INDIA TODAY SUMMIT', title: 'Garbage Guru Award — India Today', desc: "Awarded the Garbage Guru Award by India Today, presented by Shri Nitin Gadkari — then Union Minister for Road Transport & Highways. Recognised for 3R's transformative contributions to waste management in India and its role in shaping the country's integrated SWM landscape.", badge: '★ India Today · Presented by Nitin Gadkari' }
   ],
   accolades: [
     { k: 'BBC · 2021', t: 'BBC Global Coverage', d: 'Leh-Ladakh SWM plant at 3,500m — covered globally by BBC in 2021' },

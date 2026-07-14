@@ -11,6 +11,72 @@
   --olive: #6b7a4f;
   --line: rgba(43,46,37,0.13);
 }
+
+[data-theme="ocean"] {
+  --sand: #D3DBDD;
+  --panel: #E7ECEC;
+  --card: #F2F5F5;
+  --cardalt: #DEE6E7;
+  --ink: #20303a;
+  --muted: #6a7c84;
+  --faint: #93a2a8;
+  --green: #1f5563;
+  --green2: #2f6f7d;
+  --olive: #4d8592;
+  --line: rgba(32,48,58,0.13);
+}
+
+[data-theme="terracotta"] {
+  --sand: #E4D8CE;
+  --panel: #F0E9E1;
+  --card: #F8F3EC;
+  --cardalt: #EADFD3;
+  --ink: #33261d;
+  --muted: #8a7565;
+  --faint: #a99485;
+  --green: #9c4a24;
+  --green2: #b25a30;
+  --olive: #a9743f;
+  --line: rgba(51,38,29,0.13);
+}
+
+[data-theme="plum"] {
+  --sand: #DAD3DD;
+  --panel: #EBE6EE;
+  --card: #F5F1F6;
+  --cardalt: #E2DBE6;
+  --ink: #2c2333;
+  --muted: #7c7186;
+  --faint: #9d92a6;
+  --green: #5a3a6e;
+  --green2: #6e4a84;
+  --olive: #7d5c93;
+  --line: rgba(44,35,51,0.13);
+}
+
+[data-theme="charcoal"] {
+  --sand: #3a3d38;
+  --panel: #202220;
+  --card: #2f322d;
+  --cardalt: #33362f;
+  --ink: #eceadf;
+  --muted: #a7ac9e;
+  --faint: #7f8578;
+  --green: #8fae72;
+  --green2: #7c9d5f;
+  --olive: #a6bf87;
+  --line: rgba(236,234,223,0.14);
+}
+
+[data-imagery="mono"] img { filter: grayscale(1) contrast(1.04); }
+[data-imagery="duotone"] img { filter: grayscale(1) brightness(1.05) sepia(.55) hue-rotate(58deg) saturate(1.5); }
+
+[data-mood="editorial"] h1, [data-mood="editorial"] h2 { font-weight: 300 !important; letter-spacing: -0.035em !important; }
+[data-mood="editorial"] h3 { font-weight: 400 !important; }
+
+[data-mood="bold"] h1, [data-mood="bold"] h2, [data-mood="bold"] h3 { font-weight: 700 !important; letter-spacing: -0.03em !important; }
+[data-mood="bold"] h1 { text-transform: uppercase; }
+
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body {
