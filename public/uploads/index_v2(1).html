@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3R — Renewable Resource Recovery | Integrated Waste Management India</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#fff;color:#1a2b1c;overflow-x:hidden;line-height:1.5}
+:root{--g:#2B7A35;--gd:#1a4a20;--gp:#EAF4EC;--gl:#C8E6CC;--a:#F5A623;--ad:#C07A0A;--ap:#FEF4E0;--dk:#121F16;--dk2:#1A2E1E;--t:#6b7d6d;--bdr:rgba(43,122,53,0.13);--r:10px;--rl:14px}
+a{text-decoration:none;color:inherit}
+img{display:block}
+
+/* NAV */
+.nav{background:var(--dk);padding:0 52px;height:62px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:200;border-bottom:1px solid rgba(245,166,35,0.1)}
+.logo{display:flex;align-items:center;gap:11px;cursor:pointer}
+.logo-badge{width:36px;height:36px;border-radius:50%;background:var(--a);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;color:var(--dk)}
+.logo-name{color:#fff;font-size:13px;font-weight:600;line-height:1.2}
+.logo-tag{color:rgba(255,255,255,0.38);font-size:10px}
+.nav-links{display:flex;gap:2px}
+.nl{color:rgba(255,255,255,0.62);font-size:12px;padding:6px 11px;border-radius:5px;cursor:pointer;transition:color 0.15s}
+.nl:hover,.nl.active{color:var(--a)}
+.nav-btn{background:var(--a);color:var(--dk);font-size:12px;font-weight:700;padding:8px 18px;border-radius:6px;border:none;cursor:pointer;transition:opacity 0.15s}
+.nav-btn:hover{opacity:0.88}
+
+/* PAGE SYSTEM */
+.page{display:none}
+.page.active{display:block}
+
+/* HERO */
+.hero{background:var(--dk);min-height:90vh;display:grid;grid-template-columns:55% 45%;position:relative;overflow:hidden}
+.hero-left{padding:100px 48px 64px 52px;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:2}
+.hero-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(245,166,35,0.1);border:1px solid rgba(245,166,35,0.28);color:var(--a);font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:4px 12px;border-radius:20px;margin-bottom:24px;width:fit-content}
+.hero-dot{width:5px;height:5px;border-radius:50%;background:var(--a);flex-shrink:0}
+.hero-h1{font-size:42px;font-weight:300;color:#fff;line-height:1.17;letter-spacing:-0.02em;margin-bottom:18px}
+.hero-h1 strong{font-weight:700;color:var(--a);display:block}
+.hero-sub{font-size:15px;color:rgba(255,255,255,0.52);line-height:1.78;max-width:440px;margin-bottom:34px}
+.hero-btns{display:flex;gap:10px;margin-bottom:56px}
+.btn-pri{background:var(--a);color:var(--dk);font-size:13px;font-weight:700;padding:12px 22px;border-radius:7px;border:none;cursor:pointer}
+.btn-sec{background:transparent;color:rgba(255,255,255,0.78);font-size:13px;border:1px solid rgba(255,255,255,0.2);padding:12px 22px;border-radius:7px;cursor:pointer;transition:border-color 0.2s}
+.btn-sec:hover{border-color:var(--a);color:var(--a)}
+.stats-bar{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(255,255,255,0.07);padding-top:30px}
+.stat{padding-right:18px;border-right:1px solid rgba(255,255,255,0.07)}
+.stat:last-child{border-right:none}
+.stat-n{font-size:21px;font-weight:700;color:var(--a);line-height:1;margin-bottom:5px}
+.stat-l{font-size:10px;color:rgba(255,255,255,0.38);line-height:1.45}
+
+/* HERO RIGHT */
+.hero-right{position:relative;overflow:hidden}
+.hero-img{width:100%;height:100%;object-fit:cover;filter:saturate(0.55) brightness(0.9)}
+.hero-grad{position:absolute;inset:0;background:linear-gradient(to right,var(--dk) 0%,rgba(18,32,22,0.05) 60%)}
+.hero-card{position:absolute;bottom:36px;right:36px;background:rgba(15,28,18,0.82);border:1px solid rgba(245,166,35,0.25);border-radius:10px;padding:14px 18px;backdrop-filter:blur(4px)}
+.hero-card-lbl{font-size:9px;color:rgba(255,255,255,0.38);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:4px}
+.hero-card-val{font-size:13px;font-weight:600;color:#fff}
+
+/* SECTIONS */
+.sec{padding:76px 52px}
+.sec.tight{padding:52px 52px}
+.sec.slim{padding:36px 52px}
+.bg-off{background:#f5f8f5}
+.bg-dk{background:var(--dk)}
+.bg-g{background:var(--g)}
+.bg-dkalt{background:#0f1c13}
+.sl{font-size:10px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--g);margin-bottom:8px}
+.sl.w{color:rgba(255,255,255,0.42)}
+.sh{font-size:30px;font-weight:600;line-height:1.2;margin-bottom:13px;color:#1a2b1c}
+.sh.w{color:#fff}
+.ss{font-size:14px;color:var(--t);line-height:1.72;max-width:520px}
+.ss.w{color:rgba(255,255,255,0.58)}
+.s-hdr{margin-bottom:36px}
+.s-hdr-split{display:flex;align-items:flex-end;justify-content:space-between;gap:40px;margin-bottom:36px}
+.hr{height:1px;background:var(--bdr);margin:0 52px}
+
+/* IMG STRIP */
+.strip{display:grid;grid-template-columns:1fr 1fr 1fr;height:340px;gap:2px}
+.strip-item{position:relative;overflow:hidden;cursor:pointer}
+.strip-item img{width:100%;height:100%;object-fit:cover;filter:saturate(0.6) brightness(0.88);transition:filter 0.35s,transform 0.35s}
+.strip-item:hover img{filter:saturate(0.9) brightness(0.95);transform:scale(1.03)}
+.strip-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,22,12,0.88) 0%,rgba(10,22,12,0.1) 55%,transparent 100%)}
+.strip-lbl{position:absolute;bottom:0;left:0;right:0;padding:20px}
+.strip-city{font-size:16px;font-weight:700;color:#fff;line-height:1.2;margin-bottom:2px}
+.strip-yr{font-size:11px;color:rgba(255,255,255,0.5);margin-bottom:6px}
+.strip-tags{display:flex;gap:4px;flex-wrap:wrap}
+.stag{font-size:9px;padding:2px 6px;border-radius:3px;background:rgba(245,166,35,0.2);color:var(--a);font-weight:700;border:1px solid rgba(245,166,35,0.3)}
+
+/* SOLUTIONS */
+.sol-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.sol-card{background:#fff;border:1px solid var(--bdr);border-radius:var(--rl);padding:24px;cursor:pointer;transition:border-color 0.2s,box-shadow 0.2s}
+.sol-card:hover{border-color:var(--g);box-shadow:0 4px 20px rgba(43,122,53,0.11)}
+.sol-card.feat{border-color:var(--g);background:var(--gp)}
+.sol-icon{width:42px;height:42px;border-radius:9px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;background:var(--gp)}
+.sol-card.feat .sol-icon{background:var(--g)}
+.sol-badge{display:inline-block;font-size:9px;font-weight:700;padding:2px 7px;border-radius:3px;background:var(--g);color:#fff;margin-bottom:8px}
+.sol-t{font-size:14px;font-weight:700;margin-bottom:5px;color:#1a2b1c}
+.sol-d{font-size:12px;color:var(--t);line-height:1.62}
+
+/* RECOGNITION */
+.rec-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:14px}
+.rec-card{background:#fff;border:1px solid var(--bdr);border-radius:var(--rl);overflow:hidden;display:grid;grid-template-columns:190px 1fr}
+.rec-img-wrap{position:relative;overflow:hidden;height:100%;min-height:220px}
+.rec-img-wrap img{width:100%;height:100%;object-fit:cover;filter:saturate(0.65)}
+.rec-body{padding:26px 24px;display:flex;flex-direction:column;justify-content:center}
+.rec-yr{font-size:10px;font-weight:700;color:var(--a);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:7px}
+.rec-t{font-size:17px;font-weight:700;line-height:1.25;margin-bottom:10px;color:#1a2b1c}
+.rec-d{font-size:13px;color:var(--t);line-height:1.68}
+.rec-badge{display:inline-flex;align-items:center;gap:5px;margin-top:13px;background:var(--ap);color:var(--ad);font-size:11px;font-weight:700;padding:4px 10px;border-radius:5px;border:1px solid rgba(245,166,35,0.45);width:fit-content}
+.accolade-row{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.acc{padding:16px;background:#fff;border-radius:var(--r);border:1px solid var(--bdr)}
+.acc-icon{font-size:20px;margin-bottom:8px}
+.acc-t{font-size:12px;font-weight:700;margin-bottom:3px;color:#1a2b1c}
+.acc-d{font-size:11px;color:var(--t);line-height:1.55}
+
+/* PLATFORM SPLIT */
+.plat-split{display:grid;grid-template-columns:1fr 1fr;min-height:460px}
+.plat-img-side{position:relative;overflow:hidden}
+.plat-img-side img{width:100%;height:100%;object-fit:cover;filter:saturate(0.45) brightness(0.7)}
+.plat-img-side-overlay{position:absolute;inset:0;background:rgba(12,22,15,0.5)}
+.plat-chips{position:absolute;bottom:32px;left:32px;right:32px;display:flex;flex-wrap:wrap;gap:8px}
+.plat-chip{background:rgba(10,24,13,0.8);border:1px solid rgba(255,255,255,0.12);border-radius:7px;padding:8px 12px;backdrop-filter:blur(4px)}
+.plat-chip-name{font-size:12px;font-weight:700;color:#fff;margin-bottom:1px}
+.plat-chip-sub{font-size:10px;color:rgba(255,255,255,0.42)}
+.plat-content{background:var(--g);padding:60px 48px;display:flex;flex-direction:column;justify-content:center}
+.plat-stat-row{display:flex;gap:28px;margin-top:28px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.14)}
+.psn{font-size:22px;font-weight:700;color:var(--a)}
+.psl{font-size:10px;color:rgba(255,255,255,0.45);margin-top:2px}
+
+/* EMERGING */
+.emg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.emg-card{background:#fff;border:1px solid var(--bdr);border-radius:var(--r);padding:22px}
+.emg-card.hi{border-left:4px solid var(--a)}
+.emg-card.lo{border-left:4px solid var(--bdr)}
+.emg-pill{display:inline-block;font-size:9px;font-weight:700;padding:2px 7px;border-radius:3px;margin-bottom:9px}
+.pill-hot{background:var(--ap);color:var(--ad);border:1px solid rgba(245,166,35,0.45)}
+.pill-warm{background:var(--gp);color:#27500A;border:1px solid rgba(43,122,53,0.35)}
+.emg-t{font-size:14px;font-weight:700;margin-bottom:5px;color:#1a2b1c}
+.emg-d{font-size:12px;color:var(--t);line-height:1.62}
+
+/* CTA BAND */
+.cta-band{background:var(--g);padding:52px;display:flex;align-items:center;justify-content:space-between;gap:32px}
+.cta-t{font-size:22px;font-weight:600;color:#fff;line-height:1.33;max-width:420px}
+.cta-s{font-size:14px;color:rgba(255,255,255,0.6);margin-top:7px}
+.cta-btns{display:flex;gap:10px;flex-shrink:0}
+.btn-wht{background:rgba(255,255,255,0.12);color:#fff;font-size:13px;padding:11px 22px;border:1px solid rgba(255,255,255,0.24);border-radius:7px;cursor:pointer}
+
+/* FOOTER */
+.footer{background:#0c1910;padding:54px 52px 28px}
+.fgrid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:44px;margin-bottom:44px}
+.ft{color:rgba(255,255,255,0.55);font-size:11px;font-weight:700;letter-spacing:0.09em;text-transform:uppercase;margin-bottom:14px}
+.fl{display:block;color:rgba(255,255,255,0.38);font-size:12px;margin-bottom:9px;cursor:pointer;transition:color 0.15s}
+.fl:hover{color:var(--a)}
+.fbot{border-top:1px solid rgba(255,255,255,0.07);padding-top:20px;display:flex;justify-content:space-between}
+.fc{color:rgba(255,255,255,0.25);font-size:11px}
+
+/* INNER PAGES */
+.ph{background:linear-gradient(135deg,var(--dk) 0%,var(--dk2) 100%);padding:100px 52px 60px}
+.ph-lbl{color:var(--a);font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;margin-bottom:12px}
+.ph-h{font-size:36px;font-weight:600;color:#fff;line-height:1.18;margin-bottom:14px}
+.ph-s{font-size:15px;color:rgba(255,255,255,0.55);line-height:1.72;max-width:560px}
+.bc{display:flex;gap:6px;align-items:center;font-size:12px;color:rgba(255,255,255,0.35);margin-bottom:20px}
+.bc span{cursor:pointer;transition:color 0.15s}
+.bc span:hover{color:var(--a)}
+
+/* NUMBERS ROW */
+.nums{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:36px 0}
+.num-card{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:var(--r);padding:22px;text-align:center}
+.num-v{font-size:26px;font-weight:700;color:var(--a);margin-bottom:4px}
+.num-l{font-size:11px;color:rgba(255,255,255,0.4);line-height:1.4}
+
+/* PROJECTS PAGE */
+.proj-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.proj-card{background:#fff;border:1px solid var(--bdr);border-radius:var(--rl);overflow:hidden;cursor:pointer;transition:box-shadow 0.2s}
+.proj-card:hover{box-shadow:0 6px 24px rgba(43,122,53,0.13)}
+.proj-img{height:190px;position:relative;overflow:hidden;background:#c8e6cc}
+.proj-img img{width:100%;height:100%;object-fit:cover;filter:saturate(0.65)}
+.proj-badge{position:absolute;top:14px;left:14px;background:var(--g);color:#fff;font-size:9px;font-weight:700;padding:3px 8px;border-radius:4px}
+.proj-yr{position:absolute;top:14px;right:14px;background:rgba(0,0,0,0.5);color:#fff;font-size:9px;padding:3px 8px;border-radius:4px}
+.proj-body{padding:20px}
+.proj-name{font-size:16px;font-weight:700;margin-bottom:4px}
+.proj-loc{font-size:11px;color:var(--t);margin-bottom:10px}
+.proj-desc{font-size:13px;color:var(--t);line-height:1.65;margin-bottom:12px}
+.proj-tags{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:12px}
+.ptag{font-size:10px;padding:3px 7px;border-radius:4px;background:var(--gp);color:var(--g);border:1px solid var(--gl);font-weight:600}
+.ptag.am{background:var(--ap);color:var(--ad);border-color:var(--a)}
+.proj-metrics{display:flex;gap:16px;padding-top:12px;border-top:1px solid var(--bdr)}
+.pm-v{font-size:13px;font-weight:700;color:var(--g)}
+.pm-l{font-size:10px;color:var(--t)}
+
+/* SOLUTIONS PAGE */
+.sol-layout{display:grid;grid-template-columns:300px 1fr;gap:28px;align-items:start}
+.sol-nav{position:sticky;top:80px}
+.sol-ni{padding:13px 14px;border-radius:var(--r);cursor:pointer;border-left:3px solid transparent;transition:all 0.2s;margin-bottom:3px}
+.sol-ni:hover,.sol-ni.active{background:var(--gp);border-left-color:var(--g)}
+.sol-ni-t{font-size:13px;font-weight:600;color:#1a2b1c}
+.sol-ni-s{font-size:11px;color:var(--t);margin-top:2px}
+.sol-panel{display:none}
+.sol-panel.active{display:block}
+.sol-pi{background:var(--dk);border-radius:var(--r);padding:16px;display:flex;align-items:center;gap:12px;margin:14px 0}
+.sol-pi-name{font-size:13px;font-weight:700;color:var(--a)}
+.sol-pi-sub{font-size:11px;color:rgba(255,255,255,0.4);margin-top:2px}
+.sol-feat-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px}
+.sf{background:#f5f8f5;border:1px solid var(--bdr);border-radius:8px;padding:14px}
+.sf-t{font-size:12px;font-weight:700;margin-bottom:3px}
+.sf-d{font-size:11px;color:var(--t);line-height:1.58}
+.sol-proj-row{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.sol-pl{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:600;color:var(--g);background:var(--gp);border:1px solid var(--gl);padding:5px 11px;border-radius:5px;cursor:pointer;transition:background 0.15s}
+.sol-pl:hover{background:var(--gl)}
+.sol-img-ph{height:180px;background:var(--gp);border:1px solid var(--bdr);border-radius:var(--r);display:flex;align-items:center;justify-content:center;color:var(--t);font-size:12px;margin-bottom:16px;flex-direction:column;gap:5px}
+
+/* PLATFORM PAGE */
+.app-deep-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.app-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:var(--rl);padding:24px;transition:border-color 0.2s}
+.app-card:hover{border-color:rgba(245,166,35,0.4)}
+.app-icon{width:44px;height:44px;border-radius:10px;background:var(--g);display:flex;align-items:center;justify-content:center;color:#fff;font-size:20px;margin-bottom:14px}
+.app-name{font-size:17px;font-weight:700;color:#fff;margin-bottom:3px}
+.app-tag{font-size:11px;color:var(--a);margin-bottom:12px}
+.app-desc{font-size:13px;color:rgba(255,255,255,0.55);line-height:1.65;margin-bottom:14px}
+.app-list{list-style:none}
+.app-list li{font-size:12px;color:rgba(255,255,255,0.42);padding:5px 0;border-bottom:1px solid rgba(255,255,255,0.05);display:flex;gap:8px}
+.app-list li::before{content:'→';color:var(--a);flex-shrink:0}
+.erp-band{background:var(--gp);border:1px solid var(--bdr);border-radius:var(--rl);padding:28px;margin:28px 0}
+.erp-mods{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:16px}
+.erp-mod{background:#fff;border:1px solid var(--bdr);border-radius:var(--r);padding:14px;text-align:center}
+.erp-icon{font-size:18px;margin-bottom:6px}
+.erp-name{font-size:12px;font-weight:700;margin-bottom:2px}
+.erp-d{font-size:11px;color:var(--t)}
+
+/* ABOUT */
+.at-wrap{position:relative;padding-left:30px}
+.at-wrap::before{content:'';position:absolute;left:8px;top:6px;bottom:6px;width:1.5px;background:var(--bdr)}
+.at-item{position:relative;margin-bottom:30px}
+.at-dot{position:absolute;left:-23px;top:4px;width:13px;height:13px;border-radius:50%;background:var(--g);border:2.5px solid #fff;box-shadow:0 0 0 1.5px var(--g)}
+.at-dot.am{background:var(--a);box-shadow:0 0 0 1.5px var(--a)}
+.at-yr{font-size:11px;font-weight:700;color:var(--g);margin-bottom:3px}
+.at-t{font-size:15px;font-weight:700;margin-bottom:5px}
+.at-d{font-size:13px;color:var(--t);line-height:1.65}
+.at-tags{display:flex;gap:5px;flex-wrap:wrap;margin-top:7px}
+.at-tag{font-size:10px;padding:2px 7px;border-radius:4px;background:var(--gp);color:var(--g);border:1px solid var(--gl);font-weight:600}
+.val-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.val-card{background:#fff;border:1px solid var(--bdr);border-radius:var(--r);padding:20px}
+.val-icon{font-size:20px;margin-bottom:10px}
+.val-t{font-size:13px;font-weight:700;margin-bottom:5px}
+.val-d{font-size:12px;color:var(--t);line-height:1.6}
+
+/* LOOP */
+.loop-feats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.lf{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:var(--r);padding:20px}
+.lf-icon{font-size:20px;margin-bottom:9px}
+.lf-t{font-size:13px;font-weight:700;color:#fff;margin-bottom:5px}
+.lf-d{font-size:12px;color:rgba(255,255,255,0.5);line-height:1.62}
+
+/* WASTEWATER */
+.ww-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.ww-card{background:#fff;border:1px solid var(--bdr);border-radius:var(--r);padding:20px;border-top:3px solid var(--g)}
+.ww-icon{font-size:20px;margin-bottom:9px}
+.ww-t{font-size:14px;font-weight:700;margin-bottom:5px}
+.ww-d{font-size:12px;color:var(--t);line-height:1.65}
+
+/* CONTACT */
+.contact-layout{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.ci-item{display:flex;gap:14px;margin-bottom:20px;align-items:flex-start}
+.ci-icon{width:38px;height:38px;border-radius:8px;background:var(--gp);display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0}
+.ci-lbl{font-size:10px;color:var(--t);font-weight:700;letter-spacing:0.06em;text-transform:uppercase}
+.ci-val{font-size:13px;font-weight:500;margin-top:2px;line-height:1.5}
+.cf{background:#f5f8f5;border:1px solid var(--bdr);border-radius:var(--rl);padding:28px}
+.fl-row{margin-bottom:14px}
+.fl-lbl{font-size:12px;font-weight:600;color:var(--t);margin-bottom:5px;display:block}
+.fi{width:100%;padding:10px 13px;border:1px solid var(--bdr);border-radius:7px;font-size:13px;background:#fff;font-family:inherit;color:#1a2b1c;outline:none;transition:border-color 0.2s}
+.fi:focus{border-color:var(--g)}
+textarea.fi{resize:vertical;min-height:95px}
+select.fi{appearance:none}
+.fsub{background:var(--g);color:#fff;font-size:14px;font-weight:700;padding:12px;border:none;border-radius:7px;cursor:pointer;width:100%;transition:background 0.15s}
+.fsub:hover{background:#3a9a44}
+
+/* MODEL CARDS */
+.mdl-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.mdl-card{background:#fff;border:1px solid var(--bdr);border-radius:var(--rl);padding:24px}
+.mdl-lbl{display:inline-block;background:var(--g);color:#fff;font-size:11px;font-weight:700;padding:3px 9px;border-radius:5px;margin-bottom:10px}
+.mdl-t{font-size:15px;font-weight:700;margin-bottom:7px}
+.mdl-d{font-size:13px;color:var(--t);line-height:1.65}
+.mdl-best{font-size:11px;font-weight:700;color:var(--g);margin-top:9px}
+
+/* STREAMS */
+.str-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.str-card{background:#fff;border:1px solid var(--bdr);border-radius:var(--r);padding:22px}
+.str-card.hot{border-left:4px solid var(--a)}
+.str-card.warm{border-left:4px solid var(--g)}
+.str-badge{display:inline-block;font-size:9px;font-weight:700;padding:2px 7px;border-radius:3px;margin-bottom:9px}
+.sb-hot{background:var(--ap);color:var(--ad);border:1px solid rgba(245,166,35,0.45)}
+.sb-warm{background:var(--gp);color:#27500A;border:1px solid rgba(43,122,53,0.35)}
+.str-t{font-size:14px;font-weight:700;margin-bottom:5px}
+.str-d{font-size:12px;color:var(--t);line-height:1.62}
+
+/* SHARED FOOTER — show on every page */
+.site-footer-inner{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:44px;margin-bottom:44px}
+.highlight-band{background:var(--g);padding:44px 52px;display:flex;align-items:center;justify-content:space-between;gap:32px}
+.hb-t{font-size:20px;font-weight:600;color:#fff;line-height:1.35;max-width:440px}
+.hb-s{font-size:13px;color:rgba(255,255,255,0.6);margin-top:6px}
+
+/* UTIL */
+.btn-g{background:var(--g);color:#fff;font-size:13px;font-weight:700;padding:10px 22px;border-radius:7px;border:none;cursor:pointer;transition:background 0.15s}
+.btn-g:hover{background:#3a9a44}
+.btn-am{background:var(--a);color:var(--dk);font-size:13px;font-weight:700;padding:10px 22px;border-radius:7px;border:none;cursor:pointer}
+.btn-og{background:transparent;color:var(--g);font-size:13px;font-weight:700;padding:10px 22px;border-radius:7px;border:1px solid var(--g);cursor:pointer;transition:all 0.15s}
+.btn-og:hover{background:var(--g);color:#fff}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.three-col{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px}
+.img-ph{background:var(--gp);border:1px solid var(--bdr);border-radius:var(--r);display:flex;align-items:center;justify-content:center;color:var(--t);font-size:12px;flex-direction:column;gap:5px}
+.img-ph-ico{font-size:24px;opacity:0.4}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="logo" onclick="showPage('home')">
+    <div class="logo-badge">3R</div>
+    <div>
+      <div class="logo-name">Renewable Resource Recovery</div>
+      <div class="logo-tag">Integrated Sustainability Solutions</div>
+    </div>
+  </div>
+  <div class="nav-links">
+    <div class="nl active" onclick="showPage('home')">Home</div>
+    <div class="nl" onclick="showPage('solutions')">Solutions</div>
+    <div class="nl" onclick="showPage('projects')">Projects</div>
+    <div class="nl" onclick="showPage('platform')">Platform</div>
+    <div class="nl" onclick="showPage('sanitation')">Sanitation</div>
+    <div class="nl" onclick="showPage('wastewater')">Wastewater</div>
+    <div class="nl" onclick="showPage('about')">About</div>
+  </div>
+  <button class="nav-btn" onclick="showPage('contact')">Get in Touch</button>
+</nav>
+
+<!-- ══════════ HOME ══════════ -->
+<div id="page-home" class="page active">
+
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-tag"><div class="hero-dot"></div>India's integrated waste management leader</div>
+    <h1 class="hero-h1">Turning waste<br>into resources.<br><strong>Cities into models.</strong></h1>
+    <p class="hero-sub">3R designs, builds, and operates end-to-end solid waste management systems across India — from daily collection to scientific landfills. Technology-enabled. Performance-backed. Built to last.</p>
+    <div class="hero-btns">
+      <button class="btn-pri" onclick="showPage('projects')">Our Projects</button>
+      <button class="btn-sec" onclick="showPage('solutions')">Explore Solutions</button>
+    </div>
+    <div class="stats-bar">
+      <div class="stat"><div class="stat-n">1,000+</div><div class="stat-l">Tonnes processed<br>daily</div></div>
+      <div class="stat"><div class="stat-n">15,000+</div><div class="stat-l">Tonnes CO₂<br>offset to date</div></div>
+      <div class="stat"><div class="stat-n">7 Yrs</div><div class="stat-l">Silvassa project<br>operational</div></div>
+      <div class="stat"><div class="stat-n">800 TPD</div><div class="stat-l">Amritsar —<br>active today</div></div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <img class="hero-img" src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=1000&q=80&auto=format&fit=crop" alt="Waste management operations" onerror="this.style.display='none'">
+    <div class="hero-grad"></div>
+    <div class="hero-card">
+      <div class="hero-card-lbl">Currently operating</div>
+      <div class="hero-card-val">Amritsar · Silvassa · Leh · Kargil</div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECT STRIP -->
+<div class="strip">
+  <div class="strip-item">
+    <img src="https://images.unsplash.com/photo-1569163139394-de4e4f43e4e3?w=700&q=75&auto=format&fit=crop" alt="Silvassa integrated SWM" onerror="this.style.background='#1e3025';this.style.display='block';this.style.height='340px'">
+    <div class="strip-overlay"></div>
+    <div class="strip-lbl">
+      <div class="strip-city">Silvassa</div>
+      <div class="strip-yr">2019 – Ongoing · 7 years operational</div>
+      <div class="strip-tags"><span class="stag">Integrated SWM</span><span class="stag">PM Inaugurated</span><span class="stag">Bin-Free City</span></div>
+    </div>
+  </div>
+  <div class="strip-item">
+    <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=700&q=75&auto=format&fit=crop" alt="Leh Ladakh high altitude landscape" onerror="this.style.background='#1e2a20';this.style.display='block';this.style.height='340px'">
+    <div class="strip-overlay"></div>
+    <div class="strip-lbl">
+      <div class="strip-city">Leh, Ladakh</div>
+      <div class="strip-yr">2021 · ~3,500m altitude · BBC covered</div>
+      <div class="strip-tags"><span class="stag">SWM Plant</span><span class="stag">Scientific Landfill</span></div>
+    </div>
+  </div>
+  <div class="strip-item">
+    <img src="https://images.unsplash.com/photo-1589308078059-be1415eab4c3?w=700&q=75&auto=format&fit=crop" alt="Amritsar heritage city" onerror="this.style.background='#222a1e';this.style.display='block';this.style.height='340px'">
+    <div class="strip-overlay"></div>
+    <div class="strip-lbl">
+      <div class="strip-city">Amritsar</div>
+      <div class="strip-yr">2023 – Ongoing · 800 TPD daily</div>
+      <div class="strip-tags"><span class="stag">Integrated SWM</span><span class="stag">CBG Plant</span><span class="stag">MRF</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- SOLUTIONS GRID -->
+<section class="sec bg-off">
+  <div class="s-hdr-split">
+    <div>
+      <div class="sl">What We Do</div>
+      <h2 class="sh" style="max-width:380px">Full waste lifecycle.<br>Integrated or individual.</h2>
+    </div>
+    <p style="max-width:270px;font-size:13px;color:var(--t);line-height:1.7">Our core strength is integrated SWM — one of India's rarest credentials. We also deliver every component as a standalone solution.</p>
+  </div>
+  <div class="sol-grid">
+    <div class="sol-card feat" onclick="showPage('solutions');showSolution('integrated')">
+      <div class="sol-badge">Flagship capability</div>
+      <div class="sol-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      </div>
+      <div class="sol-t">Integrated Waste Management</div>
+      <div class="sol-d">City-wide systems — collection to scientific disposal — under one PPP/concession framework.</div>
+    </div>
+    <div class="sol-card" onclick="showPage('solutions');showSolution('collection')">
+      <div class="sol-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2B7A35" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+      </div>
+      <div class="sol-t">Collection & Transportation</div>
+      <div class="sol-d">Structured, route-optimised fleet operations tracked via RouteHub in real time.</div>
+    </div>
+    <div class="sol-card" onclick="showPage('solutions');showSolution('biocng')">
+      <div class="sol-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2B7A35" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+      </div>
+      <div class="sol-t">Bio-CNG / CBG Plants</div>
+      <div class="sol-d">Organic waste converted to compressed biogas — clean energy from waste, at scale.</div>
+    </div>
+    <div class="sol-card" onclick="showPage('solutions');showSolution('mrf')">
+      <div class="sol-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2B7A35" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 11-2.12-9.36L23 10"/></svg>
+      </div>
+      <div class="sol-t">Composting & MRFs</div>
+      <div class="sol-d">Aerobic composting and material recovery — diverting waste from landfill, creating value.</div>
+    </div>
+    <div class="sol-card" onclick="showPage('solutions');showSolution('landfill')">
+      <div class="sol-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2B7A35" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+      </div>
+      <div class="sol-t">Scientific Landfills</div>
+      <div class="sol-d">Engineered lined landfills with leachate treatment, gas management, and environmental monitoring.</div>
+    </div>
+    <div class="sol-card" onclick="showPage('sanitation')">
+      <div class="sol-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2B7A35" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <div class="sol-t">Sanitation & Wastewater</div>
+      <div class="sol-d">Loop smart utility pods and ULB wastewater treatment — connected to Ecosmartly.</div>
+    </div>
+  </div>
+  <div style="margin-top:24px;text-align:center"><button class="btn-g" onclick="showPage('solutions')">View All Solutions →</button></div>
+</section>
+
+<!-- RECOGNITION — 2 CURATED -->
+<section class="sec">
+  <div class="s-hdr">
+    <div class="sl">Recognition</div>
+    <h2 class="sh">Validated by India's highest offices</h2>
+  </div>
+  <div class="rec-grid">
+    <div class="rec-card">
+      <div class="rec-img-wrap">
+        <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=400&q=75&auto=format&fit=crop" alt="Government inauguration ceremony" onerror="this.parentNode.style.background='#eaf4ec'">
+      </div>
+      <div class="rec-body">
+        <div class="rec-yr">2019 · Silvassa</div>
+        <div class="rec-t">Prime Minister's Inauguration — Silvassa SWM Project</div>
+        <div class="rec-d">The Silvassa Integrated SWM project was inaugurated by PM Narendra Modi — recognised as the fastest-delivered integrated waste management project in India. PM recently appreciated Silvassa as a model bin-free city, a testament to 7 years of continuous operational excellence by 3R.</div>
+        <div class="rec-badge">★ PM Inaugurated · Bin-Free City Recognition</div>
+      </div>
+    </div>
+    <div class="rec-card">
+      <div class="rec-img-wrap">
+        <img src="https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?w=400&q=75&auto=format&fit=crop" alt="Award ceremony stage" onerror="this.parentNode.style.background='#eaf4ec'">
+      </div>
+      <div class="rec-body">
+        <div class="rec-yr">India Today Summit</div>
+        <div class="rec-t">Garbage Guru Award — India Today</div>
+        <div class="rec-d">Awarded the Garbage Guru Award by India Today, presented by Shri Nitin Gadkari — then Union Minister for Road Transport & Highways. Recognised for 3R's transformative contributions to waste management in India and its role in shaping the country's integrated SWM landscape.</div>
+        <div class="rec-badge">★ India Today · Presented by Nitin Gadkari</div>
+      </div>
+    </div>
+  </div>
+  <div class="accolade-row" style="margin-top:12px">
+    <div class="acc">
+      <div class="acc-icon">📺</div>
+      <div class="acc-t">BBC Global Coverage</div>
+      <div class="acc-d">Leh-Ladakh SWM plant at 3,500m — covered globally by BBC in 2021</div>
+    </div>
+    <div class="acc">
+      <div class="acc-icon">🌿</div>
+      <div class="acc-t">National Best Practice</div>
+      <div class="acc-d">Delhi parks composting model cited as best practice across India for 5 years</div>
+    </div>
+    <div class="acc">
+      <div class="acc-icon">🏛️</div>
+      <div class="acc-t">President Estate</div>
+      <div class="acc-d">Converted Rashtrapati Bhavan estate into a fully integrated Ecosmart Campus</div>
+    </div>
+    <div class="acc">
+      <div class="acc-icon">🌍</div>
+      <div class="acc-t">5,000m Altitude</div>
+      <div class="acc-d">SWM infrastructure at Leh and Kargil — India's highest-altitude waste systems</div>
+    </div>
+  </div>
+</section>
+
+<!-- PLATFORM SPLIT -->
+<div class="plat-split">
+  <div class="plat-img-side">
+    <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=75&auto=format&fit=crop" alt="Digital technology operations" onerror="this.style.display='none'">
+    <div class="plat-img-side-overlay"></div>
+    <div class="plat-chips">
+      <div class="plat-chip"><div class="plat-chip-name">RouteHub</div><div class="plat-chip-sub">Fleet tracking & optimisation</div></div>
+      <div class="plat-chip"><div class="plat-chip-name">Recover</div><div class="plat-chip-sub">Plant & MRF operations</div></div>
+      <div class="plat-chip"><div class="plat-chip-name">Collect</div><div class="plat-chip-sub">User fee management</div></div>
+      <div class="plat-chip"><div class="plat-chip-name">Loop</div><div class="plat-chip-sub">Smart sanitation</div></div>
+    </div>
+  </div>
+  <div class="plat-content">
+    <div class="sl w">Digital Platform</div>
+    <h2 class="sh w" style="font-size:24px">Every project<br>IT-enabled from day one.</h2>
+    <p class="ss w">Ecosmartly is our proprietary command platform — connecting collection vehicles, processing plants, user fees, and sanitation into one unified real-time dashboard. Every 3R project runs on it.</p>
+    <div class="plat-stat-row">
+      <div><div class="psn">4</div><div class="psl">Connected apps</div></div>
+      <div><div class="psn">Live</div><div class="psl">Real-time ops</div></div>
+      <div><div class="psn">ERP</div><div class="psl">Internal backbone</div></div>
+    </div>
+    <button class="btn-am" style="margin-top:28px;width:fit-content" onclick="showPage('platform')">Explore Ecosmartly →</button>
+  </div>
+</div>
+
+<!-- EMERGING STREAMS -->
+<section class="sec bg-off">
+  <div class="s-hdr-split">
+    <div>
+      <div class="sl">Active Development</div>
+      <h2 class="sh">Streams we're building now</h2>
+    </div>
+    <p style="max-width:270px;font-size:13px;color:var(--t);line-height:1.7">Beyond SWM, 3R is actively developing adjacent sustainability capabilities — several already in progress across India.</p>
+  </div>
+  <div class="emg-grid">
+    <div class="emg-card hi">
+      <div class="emg-pill pill-hot">Active Rollout</div>
+      <div class="emg-t">Agri Waste Feedstock Supply</div>
+      <div class="emg-d">Exclusive bioenergy partner — building agri crop waste collection centres across India, supplying CBG plants nationally with wet and agricultural feedstock.</div>
+    </div>
+    <div class="emg-card hi">
+      <div class="emg-pill pill-hot">In Development</div>
+      <div class="emg-t">Carbon Credits</div>
+      <div class="emg-d">Building a verified emissions reduction practice tied to waste diversion, methane avoidance from landfills, and Bio-CNG fossil substitution.</div>
+    </div>
+    <div class="emg-card lo">
+      <div class="emg-pill pill-warm">Upcoming Verticals</div>
+      <div class="emg-t">E-Waste · Hazardous · Medical · Textile</div>
+      <div class="emg-d">Four adjacent waste streams in development — extending our municipal infrastructure, field operations, and regulatory relationships into new categories.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<div class="highlight-band">
+  <div>
+    <div class="hb-t">Ready to transform your city's waste system?</div>
+    <div class="hb-s">Speak with our team — ULBs, investors, and international partners welcome.</div>
+  </div>
+  <div style="display:flex;gap:10px;flex-shrink:0">
+    <button class="btn-am" style="padding:12px 24px;font-size:14px" onclick="showPage('contact')">Get in Touch</button>
+    <button class="btn-wht" style="padding:12px 24px;font-size:13px">Download Credentials</button>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="site-footer-inner">
+    <div>
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
+        <div style="width:32px;height:32px;border-radius:50%;background:var(--a);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12px;color:var(--dk)">3R</div>
+        <div style="color:#fff;font-size:13px;font-weight:600">Renewable Resource Recovery</div>
+      </div>
+      <div style="color:rgba(255,255,255,0.38);font-size:12px;line-height:1.7;margin-bottom:16px;max-width:230px">One of India's most experienced integrated waste management companies — Delhi to Ladakh to Amritsar.</div>
+      <div style="font-size:12px;color:rgba(255,255,255,0.3);line-height:1.6">#5F Vandhna Building, 11 Tolstoy Road<br>New Delhi – 110001<br>connect@3rmanagement.in · +91 11 43029300</div>
+    </div>
+    <div>
+      <div class="ft">Solutions</div>
+      <span class="fl" onclick="showPage('solutions');showSolution('integrated')">Integrated SWM</span>
+      <span class="fl" onclick="showPage('solutions');showSolution('collection')">Collection & Transport</span>
+      <span class="fl" onclick="showPage('solutions');showSolution('biocng')">Bio-CNG / CBG</span>
+      <span class="fl" onclick="showPage('solutions');showSolution('mrf')">Composting & MRFs</span>
+      <span class="fl" onclick="showPage('solutions');showSolution('landfill')">Scientific Landfills</span>
+      <span class="fl" onclick="showPage('sanitation')">Sanitation — Loop</span>
+      <span class="fl" onclick="showPage('wastewater')">Wastewater</span>
+    </div>
+    <div>
+      <div class="ft">Projects</div>
+      <span class="fl" onclick="showPage('projects')">Silvassa (2019 – Ongoing)</span>
+      <span class="fl" onclick="showPage('projects')">Amritsar (2023 – Ongoing)</span>
+      <span class="fl" onclick="showPage('projects')">Leh, Ladakh (2021)</span>
+      <span class="fl" onclick="showPage('projects')">Kargil (2022)</span>
+      <span class="fl" onclick="showPage('projects')">Delhi — NDMC, CPWD</span>
+      <span class="fl" onclick="showPage('projects')">President Estate</span>
+    </div>
+    <div>
+      <div class="ft">Company</div>
+      <span class="fl" onclick="showPage('about')">About 3R</span>
+      <span class="fl" onclick="showPage('platform')">Ecosmartly Platform</span>
+      <span class="fl" onclick="showPage('about')">Leadership</span>
+      <span class="fl" onclick="showPage('contact')">Contact</span>
+    </div>
+  </div>
+  <div class="fbot"><div class="fc">© 2025 3R Management Ltd. All rights reserved.</div><div class="fc">Integrated Waste Management · India</div></div>
+</footer>
+</div>
+
+<!-- ══════════ SOLUTIONS ══════════ -->
+<div id="page-solutions" class="page">
+<div class="ph">
+  <div class="bc"><span onclick="showPage('home')">Home</span> / Solutions</div>
+  <div class="ph-lbl">Solutions Portfolio</div>
+  <h1 class="ph-h">Integrated or individual —<br>we cover the full waste lifecycle</h1>
+  <p class="ph-s">Our core strength is integrated waste management — one of India's rarest engineering credentials. We also deliver each component as a standalone solution.</p>
+</div>
+<section class="sec">
+  <div class="sol-layout">
+    <div class="sol-nav">
+      <div class="sol-ni active" onclick="showSolution('integrated');setActive(this)"><div class="sol-ni-t">Integrated Waste Management <span style="background:var(--g);color:#fff;font-size:9px;font-weight:700;padding:1px 6px;border-radius:3px;margin-left:4px">Flagship</span></div><div class="sol-ni-s">End-to-end city systems</div></div>
+      <div class="sol-ni" onclick="showSolution('collection');setActive(this)"><div class="sol-ni-t">Collection & Transportation</div><div class="sol-ni-s">Smart fleet & route management</div></div>
+      <div class="sol-ni" onclick="showSolution('biocng');setActive(this)"><div class="sol-ni-t">Bio-CNG / CBG Plants</div><div class="sol-ni-s">Organic waste to clean energy</div></div>
+      <div class="sol-ni" onclick="showSolution('composting');setActive(this)"><div class="sol-ni-t">Composting</div><div class="sol-ni-s">Aerobic organic waste processing</div></div>
+      <div class="sol-ni" onclick="showSolution('mrf');setActive(this)"><div class="sol-ni-t">Material Recovery Facilities</div><div class="sol-ni-s">Dry waste segregation & recovery</div></div>
+      <div class="sol-ni" onclick="showSolution('landfill');setActive(this)"><div class="sol-ni-t">Scientific Landfills</div><div class="sol-ni-s">Engineered residual disposal</div></div>
+      <div class="sol-ni" onclick="showSolution('feedstock');setActive(this)"><div class="sol-ni-t">Agri Feedstock Supply</div><div class="sol-ni-s">Bioenergy supply chain — active</div></div>
+      <div class="sol-ni" onclick="showPage('sanitation')"><div class="sol-ni-t">Sanitation — Loop ↗</div><div class="sol-ni-s">Smart utility pods</div></div>
+      <div class="sol-ni" onclick="showPage('wastewater')"><div class="sol-ni-t">Wastewater ↗</div><div class="sol-ni-s">ULB sewage treatment</div></div>
+      <div style="margin-top:16px;padding:14px;background:var(--gp);border-radius:var(--r);border:1px solid var(--bdr)">
+        <div style="font-size:10px;font-weight:700;color:var(--g);margin-bottom:5px;letter-spacing:0.08em;text-transform:uppercase">Delivery Models</div>
+        <div style="font-size:12px;color:var(--t);line-height:1.7">PPP / DBFOT · EPC · O&M · Hybrid</div>
+      </div>
+    </div>
+    <div>
+      <div id="sol-integrated" class="sol-panel active">
+        <div style="display:inline-block;background:var(--g);color:#fff;font-size:10px;font-weight:700;padding:2px 8px;border-radius:3px;margin-bottom:8px">Flagship Capability — One of India's rarest credentials</div>
+        <h2 style="font-size:22px;font-weight:700;margin-bottom:10px">Integrated Waste Management</h2>
+        <p style="font-size:14px;color:var(--t);line-height:1.72;margin-bottom:18px">We design and execute city-wide systems where the entire waste lifecycle — from doorstep collection to final scientific disposal — is governed under a single operational and accountability framework. Delivered under long-term PPP or concession models.</p>
+        <div class="sol-img-ph" style="height:190px"><div style="font-size:20px;opacity:0.35">📷</div><div>Recommended: Amritsar / Silvassa project aerial — 1100×480px</div></div>
+        <div class="sol-feat-grid">
+          <div class="sf"><div class="sf-t">Primary & Secondary Collection</div><div class="sf-d">Door-to-door and community collection with full coverage mapping and service accountability.</div></div>
+          <div class="sf"><div class="sf-t">Transport & Logistics</div><div class="sf-d">Optimised fleet deployment, route planning, and real-time tracking across all collection zones.</div></div>
+          <div class="sf"><div class="sf-t">Processing & Recovery</div><div class="sf-d">Composting, MRF operations, and Bio-CNG generation from segregated waste streams.</div></div>
+          <div class="sf"><div class="sf-t">Scientific Disposal</div><div class="sf-d">Engineered landfills for residual waste, with leachate and gas management systems.</div></div>
+          <div class="sf"><div class="sf-t">Unified Governance</div><div class="sf-d">Single-window reporting and compliance dashboards for clients and regulators.</div></div>
+          <div class="sf"><div class="sf-t">PPP / Concession Structure</div><div class="sf-d">Long-term DBFOT or hybrid with risk-sharing, performance guarantees, and KPI frameworks.</div></div>
+        </div>
+        <div class="sol-pi">
+          <div style="font-size:20px">📡</div>
+          <div><div class="sol-pi-name">Ecosmartly — Centralised Command Dashboard</div><div class="sol-pi-sub">Real-time visibility · Governance reporting · Data-driven operations</div></div>
+          <button class="btn-am" style="margin-left:auto;white-space:nowrap;font-size:12px;padding:8px 14px" onclick="showPage('platform')">Explore →</button>
+        </div>
+        <div class="sol-proj-row">
+          <div style="font-size:11px;font-weight:700;color:var(--t);width:100%;margin-bottom:4px;text-transform:uppercase;letter-spacing:0.08em">Related Projects</div>
+          <span class="sol-pl" onclick="showPage('projects')">📍 Silvassa (2019 – Ongoing)</span>
+          <span class="sol-pl" onclick="showPage('projects')">📍 Amritsar (2023 – Ongoing)</span>
+        </div>
+      </div>
+      <div id="sol-collection" class="sol-panel">
+        <h2 style="font-size:22px;font-weight:700;margin-bottom:10px">Collection & Transportation</h2>
+        <p style="font-size:14px;color:var(--t);line-height:1.72;margin-bottom:18px">Efficient, traceable waste collection systems designed for complete coverage, service reliability, and operational efficiency across urban environments — backed by RouteHub in real time.</p>
+        <div class="sol-img-ph" style="height:190px"><div style="font-size:20px;opacity:0.35">📷</div><div>Recommended: Collection vehicles in operation — 1100×480px</div></div>
+        <div class="sol-feat-grid">
+          <div class="sf"><div class="sf-t">Door-to-Door Collection</div><div class="sf-d">Structured primary collection with full household and commercial coverage and attendance tracking.</div></div>
+          <div class="sf"><div class="sf-t">Route Optimisation</div><div class="sf-d">Data-driven route design and dynamic re-optimisation to maximise coverage while reducing costs.</div></div>
+          <div class="sf"><div class="sf-t">Fleet Tracking</div><div class="sf-d">Real-time GPS tracking of all vehicles, trip verification, and driver accountability.</div></div>
+          <div class="sf"><div class="sf-t">Missed Pickup Detection</div><div class="sf-d">Automated alerts for missed routes, enabling supervisory response within the same working day.</div></div>
+        </div>
+        <div class="sol-pi"><div style="font-size:20px">🚛</div><div><div class="sol-pi-name">RouteHub — Smart Fleet Tracking & Optimisation</div><div class="sol-pi-sub">Live GPS · Route analytics · Missed pickup alerts</div></div><button class="btn-am" style="margin-left:auto;font-size:12px;padding:8px 14px" onclick="showPage('platform')">See RouteHub →</button></div>
+        <div class="sol-proj-row"><div style="font-size:11px;font-weight:700;color:var(--t);width:100%;margin-bottom:4px;text-transform:uppercase;letter-spacing:0.08em">Related Projects</div><span class="sol-pl" onclick="showPage('projects')">📍 Silvassa (2019)</span><span class="sol-pl" onclick="showPage('projects')">📍 Amritsar (2023)</span><span class="sol-pl" onclick="showPage('projects')">📍 Delhi NDMC</span></div>
+      </div>
+      <div id="sol-biocng" class="sol-panel">
+        <h2 style="font-size:22px;font-weight:700;margin-bottom:10px">Bio-CNG / Compressed Biogas (CBG) Plants</h2>
+        <p style="font-size:14px;color:var(--t);line-height:1.72;margin-bottom:18px">Anaerobic digestion systems converting organic and agri waste into biogas, compressed into Bio-CNG — a clean, renewable fuel substituting fossil CNG. We are also exclusive feedstock supply partners of a national bioenergy conglomerate, building agri waste collection centres across India.</p>
+        <div class="sol-img-ph" style="height:190px"><div style="font-size:20px;opacity:0.35">📷</div><div>Recommended: CBG plant digester / gas compression facility — 1100×480px</div></div>
+        <div class="sol-feat-grid">
+          <div class="sf"><div class="sf-t">Anaerobic Digestion Systems</div><div class="sf-d">Wet and dry digestion sized for municipal organic waste, delivering consistent gas yield.</div></div>
+          <div class="sf"><div class="sf-t">Gas Purification & Compression</div><div class="sf-d">Biogas upgrading to CNG quality, with compression and dispensing infrastructure.</div></div>
+          <div class="sf"><div class="sf-t">Feedstock Supply Chain</div><div class="sf-d">Building agri crop waste collection centres nationally as exclusive bioenergy partner.</div></div>
+          <div class="sf"><div class="sf-t">Carbon Credit Potential</div><div class="sf-d">CBG projects generate verified emissions reductions — groundwork for carbon credit monetisation.</div></div>
+        </div>
+        <div class="sol-pi"><div style="font-size:20px">⚡</div><div><div class="sol-pi-name">Ecosmartly Recover — Plant Performance & Gas Yield Analytics</div><div class="sol-pi-sub">Real-time gas output · Feedstock tracking · Efficiency monitoring</div></div></div>
+        <div class="sol-proj-row"><div style="font-size:11px;font-weight:700;color:var(--t);width:100%;margin-bottom:4px;text-transform:uppercase;letter-spacing:0.08em">Related Projects</div><span class="sol-pl" onclick="showPage('projects')">📍 Amritsar CBG Plant (2023)</span></div>
+      </div>
+      <div id="sol-composting" class="sol-panel">
+        <h2 style="font-size:22px;font-weight:700;margin-bottom:10px">Composting</h2>
+        <p style="font-size:14px;color:var(--t);line-height:1.72;margin-bottom:18px">Aerobic composting systems converting biodegradable wet waste into nutrient-rich compost. Our experience ranges from decentralised units at Delhi parks to large centralised facilities at integrated project sites.</p>
+        <div class="sol-feat-grid">
+          <div class="sf"><div class="sf-t">Centralised Plants</div><div class="sf-d">Large-scale windrow and in-vessel composting for municipal organic waste fractions.</div></div>
+          <div class="sf"><div class="sf-t">Decentralised Models</div><div class="sf-d">Community and campus-level composting proven at NDMC Delhi parks and President Estate.</div></div>
+          <div class="sf"><div class="sf-t">Compost Quality & Marketing</div><div class="sf-d">Quality testing, certification, and offtake channel development for finished compost.</div></div>
+          <div class="sf"><div class="sf-t">Landfill Load Reduction</div><div class="sf-d">Effective composting removes up to 50% of incoming waste from the disposal chain.</div></div>
+        </div>
+        <div class="sol-proj-row"><div style="font-size:11px;font-weight:700;color:var(--t);width:100%;margin-bottom:4px;text-transform:uppercase;letter-spacing:0.08em">Related Projects</div><span class="sol-pl" onclick="showPage('projects')">📍 Silvassa (2019)</span><span class="sol-pl" onclick="showPage('projects')">📍 Delhi NDMC (2016)</span><span class="sol-pl" onclick="showPage('projects')">📍 President Estate (2018)</span></div>
+      </div>
+      <div id="sol-mrf" class="sol-panel">
+        <h2 style="font-size:22px;font-weight:700;margin-bottom:10px">Material Recovery Facilities (MRFs)</h2>
+        <p style="font-size:14px;color:var(--t);line-height:1.72;margin-bottom:18px">We design, build, and operate MRFs for segregation, sorting, grading, and channelisation of dry recyclable waste. MRFs are the critical link between collection and the downstream recycling value chain.</p>
+        <div class="sol-feat-grid">
+          <div class="sf"><div class="sf-t">Sorting & Grading</div><div class="sf-d">Manual and semi-mechanised sorting lines for paper, plastics, metals, glass, and multi-layer packaging.</div></div>
+          <div class="sf"><div class="sf-t">Baling & Dispatch</div><div class="sf-d">Compaction and baling for efficient transport to downstream recyclers and aggregators.</div></div>
+          <div class="sf"><div class="sf-t">Recycler Ecosystem</div><div class="sf-d">Established relationships with verified recyclers across material categories for consistent offtake.</div></div>
+          <div class="sf"><div class="sf-t">Material Analytics</div><div class="sf-d">Weight-based tracking, recovery rate dashboards, and revenue reporting via Ecosmartly Recover.</div></div>
+        </div>
+        <div class="sol-pi"><div style="font-size:20px">♻️</div><div><div class="sol-pi-name">Ecosmartly Recover — Material Tracking & Analytics</div><div class="sol-pi-sub">Recovery rates · Revenue reporting · Integrated dashboards</div></div><button class="btn-am" style="margin-left:auto;font-size:12px;padding:8px 14px" onclick="showPage('platform')">See Recover →</button></div>
+        <div class="sol-proj-row"><div style="font-size:11px;font-weight:700;color:var(--t);width:100%;margin-bottom:4px;text-transform:uppercase;letter-spacing:0.08em">Related Projects</div><span class="sol-pl" onclick="showPage('projects')">📍 Kargil MRF (2022)</span><span class="sol-pl" onclick="showPage('projects')">📍 Silvassa MRF (2019)</span><span class="sol-pl" onclick="showPage('projects')">📍 Amritsar MRF (2023)</span></div>
+      </div>
+      <div id="sol-landfill" class="sol-panel">
+        <h2 style="font-size:22px;font-weight:700;margin-bottom:10px">Scientific Landfills</h2>
+        <p style="font-size:14px;color:var(--t);line-height:1.72;margin-bottom:18px">Scientifically engineered sanitary landfills for safe, compliant, and environmentally responsible disposal of residual waste. Proven in some of India's most extreme environments — including Leh, Ladakh at ~3,500m altitude.</p>
+        <div class="sol-img-ph" style="height:190px"><div style="font-size:20px;opacity:0.35">📷</div><div>Recommended: Leh-Ladakh landfill liner installation — 1100×480px</div></div>
+        <div class="sol-feat-grid">
+          <div class="sf"><div class="sf-t">Engineered Liner Systems</div><div class="sf-d">HDPE geomembrane liners and compacted clay barriers preventing leachate migration.</div></div>
+          <div class="sf"><div class="sf-t">Leachate Treatment</div><div class="sf-d">Drainage networks, collection sumps, and on-site or off-site leachate treatment systems.</div></div>
+          <div class="sf"><div class="sf-t">Gas Management</div><div class="sf-d">Passive and active gas extraction for methane capture, flaring, or energy generation.</div></div>
+          <div class="sf"><div class="sf-t">Environmental Monitoring</div><div class="sf-d">Groundwater, leachate, and air monitoring network with compliance reporting via Ecosmartly.</div></div>
+        </div>
+        <div class="sol-proj-row"><div style="font-size:11px;font-weight:700;color:var(--t);width:100%;margin-bottom:4px;text-transform:uppercase;letter-spacing:0.08em">Related Projects</div><span class="sol-pl" onclick="showPage('projects')">📍 Leh-Ladakh (2021)</span><span class="sol-pl" onclick="showPage('projects')">📍 Silvassa (Under Dev)</span><span class="sol-pl" onclick="showPage('projects')">📍 Amritsar (Planned)</span></div>
+      </div>
+      <div id="sol-feedstock" class="sol-panel">
+        <div style="display:inline-block;background:var(--a);color:var(--dk);font-size:10px;font-weight:700;padding:2px 8px;border-radius:3px;margin-bottom:8px">Active Rollout — Pan-India Infrastructure</div>
+        <h2 style="font-size:22px;font-weight:700;margin-bottom:10px">Agri Waste Feedstock Supply</h2>
+        <p style="font-size:14px;color:var(--t);line-height:1.72;margin-bottom:18px">3R is the exclusive feedstock supply partner of a leading Indian bioenergy conglomerate. We are actively building agri crop waste collection centres across India, creating a structured supply chain channelling agricultural residue and wet organic waste to CBG plants. This is active infrastructure being built right now.</p>
+        <div class="sol-feat-grid">
+          <div class="sf"><div class="sf-t">Agri Crop Waste Collection Centres</div><div class="sf-d">Purpose-built aggregation centres in agricultural belts — paddy straw, sugarcane bagasse, and other crop residues.</div></div>
+          <div class="sf"><div class="sf-t">Wet Waste Feedstock Supply</div><div class="sf-d">Municipal organic and market waste channelised as wet feedstock to CBG plant operators.</div></div>
+          <div class="sf"><div class="sf-t">Exclusive Bioenergy Partnership</div><div class="sf-d">As exclusive partners of a national bioenergy conglomerate, 3R manages the entire upstream feedstock supply chain.</div></div>
+          <div class="sf"><div class="sf-t">Pan-India Rollout</div><div class="sf-d">Collection centres across multiple states, targeting agricultural geographies with highest crop residue availability.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="sec bg-off tight">
+  <div class="s-hdr"><div class="sl">Delivery Models</div><h2 class="sh">Flexible execution for every mandate</h2></div>
+  <div class="mdl-grid">
+    <div class="mdl-card"><div class="mdl-lbl">PPP / DBFOT</div><div class="mdl-t">Design-Build-Finance-Operate-Transfer</div><div class="mdl-d">Long-term performance-based partnerships where 3R designs, finances, constructs, and operates against contracted KPIs. Revenue and risk shared with the client ULB.</div><div class="mdl-best">Best for: City-scale integrated SWM, CBG plants, landfills</div></div>
+    <div class="mdl-card"><div class="mdl-lbl">EPC</div><div class="mdl-t">Engineering, Procurement & Construction</div><div class="mdl-d">Fixed-price design and build delivery with defined scope and timeline. Client retains operations after handover, with optional O&M support from 3R.</div><div class="mdl-best">Best for: Specific infrastructure — MRFs, composting plants, landfills</div></div>
+    <div class="mdl-card"><div class="mdl-lbl">O&M</div><div class="mdl-t">Operations & Maintenance</div><div class="mdl-d">3R takes over existing or newly built infrastructure under a fixed or performance-linked O&M contract — bringing technology, teams, and processes to improve systems.</div><div class="mdl-best">Best for: Improving underperforming municipal assets</div></div>
+    <div class="mdl-card"><div class="mdl-lbl">Hybrid</div><div class="mdl-t">Customised Structures</div><div class="mdl-d">Bespoke project structures combining EPC for hard infrastructure with PPP for operations, or phase-gated arrangements for phased rollouts.</div><div class="mdl-best">Best for: Complex multi-component mandates</div></div>
+  </div>
+</div>
+</div>
+
+<!-- ══════════ PROJECTS ══════════ -->
+<div id="page-projects" class="page">
+<div class="ph">
+  <div class="bc"><span onclick="showPage('home')">Home</span> / Projects</div>
+  <div class="ph-lbl">Track Record</div>
+  <h1 class="ph-h">Projects that built India's<br>most credible SWM portfolio</h1>
+  <p class="ph-s">From the fastest integrated project in India to SWM plants at 5,000m altitude — our projects carry national and international recognition.</p>
+  <div class="nums">
+    <div class="num-card"><div class="num-v">1,000+</div><div class="num-l">Tonnes/day processed</div></div>
+    <div class="num-card"><div class="num-v">6+</div><div class="num-l">Cities & UTs served</div></div>
+    <div class="num-card"><div class="num-v">7 Yrs</div><div class="num-l">Longest running project</div></div>
+    <div class="num-card"><div class="num-v">2×</div><div class="num-l">PM recognition</div></div>
+  </div>
+</div>
+<section class="sec">
+  <div class="proj-grid">
+    <div class="proj-card">
+      <div class="proj-img"><img src="https://images.unsplash.com/photo-1569163139394-de4e4f43e4e3?w=700&q=75&auto=format&fit=crop" alt="Silvassa"><div class="proj-badge">Integrated SWM</div><div class="proj-yr">2019 – Ongoing · 7 Years</div></div>
+      <div class="proj-body">
+        <div class="proj-name">Silvassa — Integrated SWM Project</div>
+        <div class="proj-loc">📍 Silvassa Municipal Corporation, UT of Dadra & Nagar Haveli</div>
+        <div class="proj-desc">India's fastest-delivered integrated SWM project at time of commissioning. Inaugurated by PM Narendra Modi in 2019. Now in its 7th year — PM recently appreciated Silvassa as a model bin-free city.</div>
+        <div class="proj-tags"><span class="ptag">Integrated SWM</span><span class="ptag">MRF</span><span class="ptag">Composting</span><span class="ptag">Landfill</span><span class="ptag am">PM Inaugurated</span><span class="ptag am">Bin-Free City</span></div>
+        <div class="proj-metrics"><div><div class="pm-v">2019</div><div class="pm-l">Commissioned</div></div><div><div class="pm-v">7 Yrs</div><div class="pm-l">Operational</div></div><div><div class="pm-v">100%</div><div class="pm-l">City coverage</div></div></div>
+      </div>
+    </div>
+    <div class="proj-card">
+      <div class="proj-img"><img src="https://images.unsplash.com/photo-1589308078059-be1415eab4c3?w=700&q=75&auto=format&fit=crop" alt="Amritsar"><div class="proj-badge">Integrated SWM · 800 TPD</div><div class="proj-yr">2023 – Ongoing</div></div>
+      <div class="proj-body">
+        <div class="proj-name">Amritsar — Integrated SWM & CBG</div>
+        <div class="proj-loc">📍 Amritsar Municipal Corporation, Punjab</div>
+        <div class="proj-desc">One of India's most ambitious integrated SWM projects currently underway. Lifting 800 tonnes daily in a global heritage city. SWM plant, MRF, and CBG plant under construction simultaneously.</div>
+        <div class="proj-tags"><span class="ptag">Integrated SWM</span><span class="ptag">CBG Plant</span><span class="ptag">MRF</span><span class="ptag">Landfill</span><span class="ptag am">800 TPD</span></div>
+        <div class="proj-metrics"><div><div class="pm-v">800 TPD</div><div class="pm-l">Daily lifted</div></div><div><div class="pm-v">2023</div><div class="pm-l">Project start</div></div><div><div class="pm-v">4</div><div class="pm-l">Components</div></div></div>
+      </div>
+    </div>
+    <div class="proj-card">
+      <div class="proj-img"><img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=700&q=75&auto=format&fit=crop" alt="Leh Ladakh"><div class="proj-badge">SWM Plant · Landfill</div><div class="proj-yr">2021</div></div>
+      <div class="proj-body">
+        <div class="proj-name">Leh, Ladakh — SWM Plant & Scientific Landfill</div>
+        <div class="proj-loc">📍 Leh, Union Territory of Ladakh · ~3,500m altitude</div>
+        <div class="proj-desc">SWM plant and engineered scientific landfill in one of the world's most ecologically sensitive environments. Covered by BBC globally — a landmark in India's environmental infrastructure ambition.</div>
+        <div class="proj-tags"><span class="ptag">SWM Plant</span><span class="ptag">Scientific Landfill</span><span class="ptag">High Altitude</span><span class="ptag am">BBC Covered</span></div>
+        <div class="proj-metrics"><div><div class="pm-v">~3,500m</div><div class="pm-l">Altitude</div></div><div><div class="pm-v">2021</div><div class="pm-l">Commissioned</div></div><div><div class="pm-v">BBC</div><div class="pm-l">Global coverage</div></div></div>
+      </div>
+    </div>
+    <div class="proj-card">
+      <div class="proj-img" style="background:#2a3d2c;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.3);font-size:12px"><div class="proj-badge">SWM Plant · MRF</div><div class="proj-yr">2022</div><div>📷 Kargil project photo</div></div>
+      <div class="proj-body">
+        <div class="proj-name">Kargil, Ladakh — SWM Plant & MRF</div>
+        <div class="proj-loc">📍 Kargil, Union Territory of Ladakh</div>
+        <div class="proj-desc">Second high-altitude waste management system — replicating and adapting the Leh model for Kargil. SWM processing plant and MRF for dry waste segregation and recovery.</div>
+        <div class="proj-tags"><span class="ptag">SWM Plant</span><span class="ptag">MRF</span><span class="ptag">High Altitude</span></div>
+        <div class="proj-metrics"><div><div class="pm-v">2022</div><div class="pm-l">Commissioned</div></div><div><div class="pm-v">Ladakh</div><div class="pm-l">UT of Ladakh</div></div></div>
+      </div>
+    </div>
+    <div class="proj-card">
+      <div class="proj-img"><img src="https://images.unsplash.com/photo-1534430480872-3498386e7856?w=700&q=75&auto=format&fit=crop" alt="Delhi parks"><div class="proj-badge">Decentralised Composting</div><div class="proj-yr">2016 – Ongoing</div></div>
+      <div class="proj-body">
+        <div class="proj-name">Delhi — NDMC, CPWD & City Parks</div>
+        <div class="proj-loc">📍 New Delhi Municipal Council & CPWD, Delhi</div>
+        <div class="proj-desc">Decentralised horticulture waste management at Delhi city parks under NDMC — cited as national best practices for five consecutive years. Expanded to CPWD properties and institutions.</div>
+        <div class="proj-tags"><span class="ptag">Horticulture Waste</span><span class="ptag">Decentralised Composting</span><span class="ptag am">5-Year Best Practice</span></div>
+        <div class="proj-metrics"><div><div class="pm-v">2016</div><div class="pm-l">Project start</div></div><div><div class="pm-v">5 Yrs</div><div class="pm-l">Best practice</div></div></div>
+      </div>
+    </div>
+    <div class="proj-card">
+      <div class="proj-img"><img src="https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=700&q=75&auto=format&fit=crop" alt="President Estate campus"><div class="proj-badge">Ecosmart Campus</div><div class="proj-yr">2018</div></div>
+      <div class="proj-body">
+        <div class="proj-name">President Estate — Ecosmart Campus</div>
+        <div class="proj-loc">📍 Rashtrapati Bhavan Estate, New Delhi</div>
+        <div class="proj-desc">3R converted the President of India's estate into a fully Ecosmart Campus — managing integrated waste and water systems. A mandate of the highest national prestige and operational precision.</div>
+        <div class="proj-tags"><span class="ptag">Ecosmart Campus</span><span class="ptag">Waste Management</span><span class="ptag">Water Management</span><span class="ptag am">President Estate</span></div>
+        <div class="proj-metrics"><div><div class="pm-v">2018</div><div class="pm-l">Commissioned</div></div><div><div class="pm-v">Integrated</div><div class="pm-l">Waste + Water</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- ══════════ PLATFORM ══════════ -->
+<div id="page-platform" class="page">
+<div class="ph">
+  <div class="bc"><span onclick="showPage('home')">Home</span> / Platform</div>
+  <div class="ph-lbl">Digital Infrastructure</div>
+  <h1 class="ph-h">Ecosmartly — Every project.<br>One intelligent platform.</h1>
+  <p class="ph-s">Every 3R project is digitally enabled through Ecosmartly — a unified command and analytics layer connecting collection, processing, user fees, and sanitation in real time.</p>
+  <div style="margin-top:24px;display:flex;gap:10px"><button class="btn-am" onclick="showPage('contact')">Request a Demo →</button></div>
+</div>
+<section class="sec bg-off">
+  <div class="s-hdr"><div class="sl">Platform Overview</div><h2 class="sh">One dashboard. Every operation.</h2><p class="ss">Ecosmartly is 3R's proprietary integrated operations platform, purpose-built for urban waste management complexity. It connects field operations to municipal governance to investor reporting — all in one interface.</p></div>
+  <div class="two-col" style="align-items:center">
+    <div class="img-ph" style="height:280px"><div class="img-ph-ico">💻</div><div style="font-size:12px">Ecosmartly Dashboard Screenshot</div><div style="font-size:10px;opacity:0.6">Recommended: Full dashboard UI — 1000×600px</div></div>
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <div style="display:flex;gap:12px;align-items:flex-start"><div style="width:36px;height:36px;background:var(--gp);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:15px">📡</div><div><div style="font-size:14px;font-weight:700;margin-bottom:3px">Real-time operational visibility</div><div style="font-size:13px;color:var(--t)">Live tracking across collection vehicles, plant operations, and processing outputs — updated continuously.</div></div></div>
+      <div style="display:flex;gap:12px;align-items:flex-start"><div style="width:36px;height:36px;background:var(--gp);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:15px">📊</div><div><div style="font-size:14px;font-weight:700;margin-bottom:3px">Governance & compliance reporting</div><div style="font-size:13px;color:var(--t)">Auto-generated reports for municipal clients, regulators, and concession authorities.</div></div></div>
+      <div style="display:flex;gap:12px;align-items:flex-start"><div style="width:36px;height:36px;background:var(--gp);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:15px">🔗</div><div><div style="font-size:14px;font-weight:700;margin-bottom:3px">Unified cross-module integration</div><div style="font-size:13px;color:var(--t)">RouteHub, Recover, Collect, and Loop all feed into the Ecosmartly master dashboard — no siloed data.</div></div></div>
+      <div style="display:flex;gap:12px;align-items:flex-start"><div style="width:36px;height:36px;background:var(--gp);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:15px">📱</div><div><div style="font-size:14px;font-weight:700;margin-bottom:3px">Mobile-first field operations</div><div style="font-size:13px;color:var(--t)">All apps are mobile-native — designed for field supervisors, vehicle operators, and plant staff.</div></div></div>
+    </div>
+  </div>
+</section>
+<section class="sec bg-dkalt">
+  <div class="s-hdr"><div class="sl w">Applications</div><h2 class="sh w">Four specialised apps. One unified platform.</h2></div>
+  <div class="app-deep-grid">
+    <div class="app-card"><div class="app-icon">🚛</div><div class="app-name">RouteHub</div><div class="app-tag">Smart fleet tracking & route optimisation</div><div class="app-desc">RouteHub manages the full complexity of urban waste collection — from route design to real-time vehicle tracking to supervisor alerts. Operational across Amritsar, Silvassa, and Delhi.</div><ul class="app-list"><li>Live GPS tracking of all collection vehicles</li><li>Dynamic route optimisation based on waste generation data</li><li>Missed pickup detection and supervisor alert system</li><li>Trip verification and driver attendance logging</li><li>Fuel efficiency and fleet performance analytics</li><li>Citizen complaint and feedback integration</li></ul></div>
+    <div class="app-card"><div class="app-icon">♻️</div><div class="app-name">Recover</div><div class="app-tag">Plant & MRF operations platform</div><div class="app-desc">Recover is 3R's plant operations platform — used at Bio-CNG plants, composting facilities, and MRFs to track inputs, processing efficiency, outputs, and resource recovery rates in real time.</div><ul class="app-list"><li>Incoming waste weight and category logging</li><li>Processing efficiency and throughput dashboards</li><li>Gas yield analytics for Bio-CNG / CBG plants</li><li>Material recovery rate tracking for MRFs</li><li>Compost quality and output volume reporting</li><li>Maintenance scheduling and downtime logging</li></ul></div>
+    <div class="app-card"><div class="app-icon">💳</div><div class="app-name">Collect</div><div class="app-tag">User fee collection & audit system</div><div class="app-desc">Collect digitises and audits user fee collection across residential and commercial categories — creating accountable, transparent, and leakage-free revenue streams for municipalities.</div><ul class="app-list"><li>Household-level user fee collection tracking</li><li>Collector attendance and route verification</li><li>Real-time collection dashboards for supervisors</li><li>Revenue reconciliation and audit trails</li><li>Exemption and arrears management</li><li>Integration with Ecosmartly central reporting</li></ul></div>
+    <div class="app-card"><div class="app-icon">🚻</div><div class="app-name">Loop</div><div class="app-tag">Smart sanitation & utility pod management</div><div class="app-desc">Loop powers 3R's sanitation vertical — managing smart utility pods with IoT integration, usage monitoring, maintenance scheduling, and citizen access systems. <span style="color:var(--a);cursor:pointer" onclick="showPage('sanitation')">See Loop in depth →</span></div><ul class="app-list"><li>Smart utility pod monitoring and status dashboards</li><li>IoT-based usage and occupancy tracking</li><li>Automated maintenance alerts and work orders</li><li>Cleanliness audit and quality scoring</li><li>Citizen access and feedback integration</li><li>Connected to Ecosmartly unified reporting</li></ul></div>
+  </div>
+</section>
+<section class="sec">
+  <div class="s-hdr"><div class="sl">Internal Operations</div><h2 class="sh">Backed by an ERP-driven organisation</h2><p class="ss">Client-facing technology is only as good as the organisation running it. 3R's entire internal operation runs on an integrated ERP — ensuring every project is backed by disciplined finance, HR, procurement, and project management.</p></div>
+  <div class="erp-band">
+    <div style="font-size:15px;font-weight:700;margin-bottom:5px">Internal ERP — Operational Backbone</div>
+    <div style="font-size:13px;color:var(--t)">All departments operate on a unified ERP — giving clients confidence in the organisation behind every mandate.</div>
+    <div class="erp-mods">
+      <div class="erp-mod"><div class="erp-icon">📋</div><div class="erp-name">Project Management</div><div class="erp-d">Milestone tracking, resource allocation, site reporting</div></div>
+      <div class="erp-mod"><div class="erp-icon">💰</div><div class="erp-name">Finance & Billing</div><div class="erp-d">P&L, invoicing, cash flow, project-wise accounting</div></div>
+      <div class="erp-mod"><div class="erp-icon">👥</div><div class="erp-name">Human Resources</div><div class="erp-d">Workforce management, payroll, training, compliance</div></div>
+      <div class="erp-mod"><div class="erp-icon">🛒</div><div class="erp-name">Procurement</div><div class="erp-d">Vendor management, purchase orders, inventory</div></div>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- ══════════ SANITATION ══════════ -->
+<div id="page-sanitation" class="page">
+<div class="ph" style="background:linear-gradient(135deg,#0A1F2E 0%,#0D2B1A 100%)">
+  <div class="bc"><span onclick="showPage('home')">Home</span> / Sanitation — Loop</div>
+  <div style="display:inline-block;background:rgba(245,166,35,0.12);border:1px solid rgba(245,166,35,0.35);color:var(--a);font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:4px 12px;border-radius:20px;margin-bottom:18px">New Vertical · Powered by Loop</div>
+  <h1 class="ph-h">Smart Sanitation<br>for Indian Cities</h1>
+  <p class="ph-s">3R's sanitation vertical brings the same operational discipline and digital intelligence that transformed waste management to India's public sanitation infrastructure — powered by the Loop platform and smart utility pods.</p>
+</div>
+<section class="sec bg-off">
+  <div class="s-hdr"><div class="sl">What is Loop</div><h2 class="sh">Loop — Smart Utility Pod Management Platform</h2><p class="ss">Loop connects smart utility pods (public sanitation facilities) to a centralised operations and citizen-access system. Fully integrated with Ecosmartly for unified municipal reporting.</p></div>
+  <div class="two-col" style="align-items:start">
+    <div>
+      <div class="img-ph" style="height:240px;margin-bottom:12px"><div class="img-ph-ico">📷</div><div style="font-size:12px">Loop Smart Utility Pod — exterior photo</div><div style="font-size:10px;opacity:0.6">Recommended: 700×550px with branding visible</div></div>
+      <div style="padding:16px;background:var(--gp);border-radius:var(--r);border:1px solid var(--bdr)">
+        <div style="font-size:12px;font-weight:700;color:var(--g);margin-bottom:5px">Connected to Ecosmartly</div>
+        <div style="font-size:12px;color:var(--t);line-height:1.65">Loop feeds real-time pod status, usage data, and maintenance logs into the Ecosmartly master dashboard — giving municipal clients a single window across waste and sanitation.</div>
+        <button class="btn-og" style="margin-top:12px;font-size:12px;padding:7px 16px" onclick="showPage('platform')">Explore Ecosmartly →</button>
+      </div>
+    </div>
+    <div class="loop-feats" style="display:grid;grid-template-columns:1fr;gap:10px">
+      <div class="lf" style="background:var(--gp);border:1px solid var(--bdr)"><div class="lf-icon">🏗️</div><div class="lf-t" style="color:#1a2b1c">Smart Utility Pods</div><div class="lf-d" style="color:var(--t)">Modular, prefabricated sanitation infrastructure for rapid deployment in urban public spaces — IoT-enabled from installation.</div></div>
+      <div class="lf" style="background:var(--gp);border:1px solid var(--bdr)"><div class="lf-icon">📡</div><div class="lf-t" style="color:#1a2b1c">Real-Time Monitoring</div><div class="lf-d" style="color:var(--t)">Live occupancy, usage frequency, water consumption, and cleanliness status tracked and surfaced on the Loop dashboard.</div></div>
+      <div class="lf" style="background:var(--gp);border:1px solid var(--bdr)"><div class="lf-icon">🔧</div><div class="lf-t" style="color:#1a2b1c">Predictive Maintenance</div><div class="lf-d" style="color:var(--t)">Automated maintenance alerts triggered by usage data — replacing reactive cleaning schedules with data-driven dispatch.</div></div>
+      <div class="lf" style="background:var(--gp);border:1px solid var(--bdr)"><div class="lf-icon">👤</div><div class="lf-t" style="color:#1a2b1c">Citizen Access & Feedback</div><div class="lf-d" style="color:var(--t)">QR-based access, citizen cleanliness ratings, and complaint integration — making public sanitation accountable.</div></div>
+    </div>
+  </div>
+</section>
+<div class="highlight-band"><div><div class="hb-t">Loop's dedicated website goes deeper into sanitation solutions.</div><div class="hb-s">Full product details, case studies, and deployment models available at the Loop platform website.</div></div><button class="btn-am">Visit Loop Website →</button></div>
+</div>
+
+<!-- ══════════ WASTEWATER ══════════ -->
+<div id="page-wastewater" class="page">
+<div class="ph">
+  <div class="bc"><span onclick="showPage('home')">Home</span> / Wastewater</div>
+  <div class="ph-lbl">Wastewater & Sewage</div>
+  <h1 class="ph-h">Wastewater Management<br>for Urban Local Bodies</h1>
+  <p class="ph-s">Extending our municipal expertise into wastewater — sewage collection, treatment, and safe disposal for ULBs across India, backed by the same operational infrastructure that powers our solid waste projects.</p>
+</div>
+<section class="sec">
+  <div class="s-hdr"><div class="sl">Our Capabilities</div><h2 class="sh">Structured wastewater solutions for municipalities</h2></div>
+  <div class="ww-grid">
+    <div class="ww-card"><div class="ww-icon">🌊</div><div class="ww-t">Sewage Collection & Conveyance</div><div class="ww-d">Design and O&M of sewage collection networks including sewer lines, manholes, pumping stations, and rising mains for ULBs.</div></div>
+    <div class="ww-card"><div class="ww-icon">🏭</div><div class="ww-t">Sewage Treatment Plants</div><div class="ww-d">Design, build, and operation of STPs delivering treated effluent meeting CPCB/SPCB discharge norms.</div></div>
+    <div class="ww-card"><div class="ww-icon">♻️</div><div class="ww-t">Treated Water Reuse</div><div class="ww-d">Tertiary treatment for treated water reuse in horticulture, industrial processes, and urban landscaping.</div></div>
+    <div class="ww-card"><div class="ww-icon">🔬</div><div class="ww-t">Sludge Management</div><div class="ww-d">Dewatering, composting, and safe disposal of STP sludge — converting a liability into a manageable resource.</div></div>
+    <div class="ww-card"><div class="ww-icon">📡</div><div class="ww-t">SCADA & Remote Monitoring</div><div class="ww-d">Automated plant monitoring, alarm systems, and real-time dashboards integrated with Ecosmartly.</div></div>
+    <div class="ww-card"><div class="ww-icon">📋</div><div class="ww-t">O&M Contracts</div><div class="ww-d">Long-term operations and maintenance of municipal wastewater infrastructure against contracted service levels.</div></div>
+  </div>
+  <div style="margin-top:24px;padding:22px;background:var(--gp);border-radius:var(--rl);border:1px solid var(--bdr)">
+    <div style="font-size:14px;font-weight:700;margin-bottom:7px;color:var(--g)">Distinct from Sanitation</div>
+    <div style="font-size:13px;color:var(--t);line-height:1.7">This vertical covers <strong>sewage infrastructure and treatment plants</strong> for ULBs — large-scale municipal water services. Our <strong style="color:var(--g);cursor:pointer" onclick="showPage('sanitation')">sanitation vertical (Loop)</strong> covers public convenience infrastructure — smart utility pods and citizen-facing facilities. Together, they represent a comprehensive urban water and sanitation portfolio.</div>
+  </div>
+</section>
+</div>
+
+<!-- ══════════ ABOUT ══════════ -->
+<div id="page-about" class="page">
+<div class="ph">
+  <div class="bc"><span onclick="showPage('home')">Home</span> / About</div>
+  <div class="ph-lbl">About 3R</div>
+  <h1 class="ph-h">Built on credibility.<br>Driven by purpose.</h1>
+  <p class="ph-s">3R was founded on the belief that waste management is not a municipal cost centre but a sustainability opportunity. Everything we do is shaped by that conviction.</p>
+</div>
+<section class="sec">
+  <div class="two-col">
+    <div>
+      <div class="sl">Vision</div>
+      <h2 class="sh" style="font-size:22px;margin-bottom:12px">India's most trusted<br>integrated SWM partner</h2>
+      <p style="font-size:14px;color:var(--t);line-height:1.75">When government bodies, municipalities, and investors think of integrated waste management in India, 3R should be the name they reach for first — not for the lowest price, but for the highest confidence in delivery, operations, and sustained impact.</p>
+      <div style="margin-top:18px;padding:16px;background:var(--gp);border-radius:var(--r);border-left:4px solid var(--g)">
+        <div style="font-size:13px;color:var(--t);font-style:italic;line-height:1.7">"We don't just build facilities. We run them. For years. In places no one else would go — from Leh at 3,500m to Amritsar at 800 tonnes a day. That is the 3R standard."</div>
+      </div>
+    </div>
+    <div>
+      <div class="sl">Mission</div>
+      <h2 class="sh" style="font-size:22px;margin-bottom:12px">Systems that outlast<br>every political cycle</h2>
+      <p style="font-size:14px;color:var(--t);line-height:1.75">Our mission is to deliver waste management systems that work — not just on inauguration day, but every day for the life of the contract and beyond. We combine engineered infrastructure, digital intelligence, and long-term operational discipline under one accountability framework.</p>
+    </div>
+  </div>
+</section>
+<section class="sec bg-off">
+  <div class="s-hdr"><div class="sl">Our Journey</div><h2 class="sh">From Delhi parks to a nation's waste</h2></div>
+  <div class="at-wrap">
+    <div class="at-item"><div class="at-dot"></div><div class="at-yr">2014 — Founded</div><div class="at-t">3R — Renewable Resource Recovery — established</div><div class="at-d">Company incorporated with a focus on integrated waste management for urban local bodies and government clients across India.</div></div>
+    <div class="at-item"><div class="at-dot"></div><div class="at-yr">2016 — Delhi, NDMC</div><div class="at-t">Delhi parks horticulture waste management</div><div class="at-d">Deployed decentralised composting at Delhi city parks under NDMC — recognised as national best practices for five consecutive years.</div><div class="at-tags"><span class="at-tag">Composting</span><span class="at-tag">NDMC</span><span class="at-tag">Best Practice</span></div></div>
+    <div class="at-item"><div class="at-dot"></div><div class="at-yr">2018 — President Estate</div><div class="at-t">Rashtrapati Bhavan — India's most prestigious mandate</div><div class="at-d">3R converted the President of India's estate into a fully Ecosmart Campus — integrated waste and water management at the highest operational precision.</div><div class="at-tags"><span class="at-tag">Ecosmart Campus</span><span class="at-tag">Waste + Water</span></div></div>
+    <div class="at-item"><div class="at-dot am"></div><div class="at-yr">2019 — Silvassa</div><div class="at-t">India's fastest integrated SWM project — PM inaugurated</div><div class="at-d">Delivered the Silvassa Integrated SWM project — fastest in India at that time — inaugurated by PM Modi. Now 7 years operational. PM recently appreciated Silvassa as a bin-free city.</div><div class="at-tags"><span class="at-tag">Integrated SWM</span><span class="at-tag">PM Inauguration</span><span class="at-tag">Bin-Free City</span></div></div>
+    <div class="at-item"><div class="at-dot am"></div><div class="at-yr">2021 — Leh, Ladakh</div><div class="at-t">World-class SWM at 3,500m — BBC global coverage</div><div class="at-d">SWM plant and scientific landfill in Leh at ~3,500m altitude. Covered by BBC globally — a landmark in India's environmental infrastructure ambition.</div><div class="at-tags"><span class="at-tag">High Altitude SWM</span><span class="at-tag">Scientific Landfill</span><span class="at-tag">BBC Coverage</span></div></div>
+    <div class="at-item"><div class="at-dot"></div><div class="at-yr">2022 — Kargil</div><div class="at-t">Second Ladakh SWM system</div><div class="at-d">SWM plant and MRF in Kargil — replicating the Leh model in the strategically significant Kargil district.</div><div class="at-tags"><span class="at-tag">MRF</span><span class="at-tag">SWM Plant</span></div></div>
+    <div class="at-item"><div class="at-dot am"></div><div class="at-yr">2023 — Amritsar</div><div class="at-t">800 TPD integrated SWM — global heritage city</div><div class="at-d">Integrated SWM mandate in Amritsar — lifting 800 TPD, building SWM plant, CBG plant, and MRF concurrently.</div><div class="at-tags"><span class="at-tag">800 TPD</span><span class="at-tag">CBG</span><span class="at-tag">Integrated SWM</span></div></div>
+    <div class="at-item"><div class="at-dot am"></div><div class="at-yr">2024 – Ongoing</div><div class="at-t">Ecosmartly · Loop · CBG Feedstock · Carbon Credits</div><div class="at-d">Loop sanitation vertical launched. Agri waste feedstock centres actively rolling out pan-India as exclusive bioenergy partner. Carbon credit framework being built across project portfolio.</div><div class="at-tags"><span class="at-tag">Ecosmartly</span><span class="at-tag">Loop</span><span class="at-tag">CBG Feedstock</span><span class="at-tag">Carbon Credits</span></div></div>
+  </div>
+</section>
+<section class="sec">
+  <div class="s-hdr"><div class="sl">Core Values</div><h2 class="sh">What guides every decision</h2></div>
+  <div class="val-grid">
+    <div class="val-card"><div class="val-icon">🌿</div><div class="val-t">Harmonious Ecosystem</div><div class="val-d">Every system we build is designed to work with its environment — socially, ecologically, and institutionally.</div></div>
+    <div class="val-card"><div class="val-icon">📈</div><div class="val-t">Inclusive Growth</div><div class="val-d">Our projects create formal employment, support waste-picker integration, and generate community value.</div></div>
+    <div class="val-card"><div class="val-icon">🏆</div><div class="val-t">Ownership</div><div class="val-d">We own outcomes, not just deliverables. Our 7-year Silvassa track record is the proof.</div></div>
+    <div class="val-card"><div class="val-icon">💡</div><div class="val-t">Innovation</div><div class="val-d">From Ecosmartly to Loop to BSF processing — we invest in technology that makes our systems smarter over time.</div></div>
+    <div class="val-card"><div class="val-icon">😊</div><div class="val-t">Client Delight</div><div class="val-d">Our clients trust us with mandates that cannot afford to fail — from PM-inaugurated projects to President Estate.</div></div>
+    <div class="val-card"><div class="val-icon">🤝</div><div class="val-t">Long-Term Partnership</div><div class="val-d">We look for the next decade of operating the project we're in — and the trust that earns us the next one.</div></div>
+  </div>
+</section>
+</div>
+
+<!-- ══════════ CONTACT ══════════ -->
+<div id="page-contact" class="page">
+<div class="ph">
+  <div class="bc"><span onclick="showPage('home')">Home</span> / Contact</div>
+  <div class="ph-lbl">Get in Touch</div>
+  <h1 class="ph-h">Let's build something that lasts</h1>
+  <p class="ph-s">Whether you're a ULB exploring an integrated SWM mandate, an investor evaluating our portfolio, or an international organisation seeking an India partner — we want to hear from you.</p>
+</div>
+<section class="sec">
+  <div class="contact-layout">
+    <div>
+      <div class="sl" style="margin-bottom:20px">Our Office</div>
+      <div class="ci-item"><div class="ci-icon">🏢</div><div><div class="ci-lbl">Registered & Corporate Office</div><div class="ci-val">#5F, Vandhna Building, 11, Tolstoy Road<br>New Delhi – 110001, India</div></div></div>
+      <div class="ci-item"><div class="ci-icon">✉️</div><div><div class="ci-lbl">Email</div><div class="ci-val" style="color:var(--g)">connect@3rmanagement.in</div></div></div>
+      <div class="ci-item"><div class="ci-icon">📞</div><div><div class="ci-lbl">Phone</div><div class="ci-val">+91 11 43029300</div></div></div>
+      <div style="margin-top:20px;padding:18px;background:var(--gp);border-radius:var(--rl);border:1px solid var(--bdr)">
+        <div style="font-size:13px;font-weight:700;color:var(--g);margin-bottom:10px">I'm reaching out as a...</div>
+        <div style="font-size:13px;color:var(--t);line-height:1.9">🏛️ <strong>Municipality / ULB</strong> — SWM mandate or O&M project<br>📊 <strong>Investor</strong> — financial model and project pipeline<br>🌐 <strong>International partner</strong> — strategic collaboration in India<br>🏭 <strong>CBG / Bioenergy operator</strong> — feedstock supply partnerships</div>
+      </div>
+    </div>
+    <div class="cf">
+      <div style="font-size:15px;font-weight:700;margin-bottom:18px">Send us a message</div>
+      <div class="fl-row"><label class="fl-lbl">Your Name</label><input class="fi" type="text" placeholder="Full name"></div>
+      <div class="fl-row"><label class="fl-lbl">Organisation</label><input class="fi" type="text" placeholder="Organisation / Company"></div>
+      <div class="fl-row"><label class="fl-lbl">Email</label><input class="fi" type="email" placeholder="your@email.com"></div>
+      <div class="fl-row"><label class="fl-lbl">I am reaching out as a</label><select class="fi"><option>Select category...</option><option>Municipality / Urban Local Body</option><option>Investor / Financial Partner</option><option>International Organisation / NGO</option><option>CBG / Bioenergy Plant Operator</option><option>Government / Policy Body</option><option>Media / Research</option><option>Other</option></select></div>
+      <div class="fl-row"><label class="fl-lbl">Message</label><textarea class="fi" placeholder="Tell us about your requirement, location, and scale of project..."></textarea></div>
+      <button class="fsub">Submit Enquiry →</button>
+    </div>
+  </div>
+</section>
+</div>
+
+<script>
+function showPage(name){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.nl').forEach(l=>l.classList.remove('active'));
+  var pg=document.getElementById('page-'+name);
+  if(pg){pg.classList.add('active');window.scrollTo({top:0,behavior:'smooth'});}
+  document.querySelectorAll('.nl').forEach(l=>{if(l.getAttribute('onclick')&&l.getAttribute('onclick').includes("'"+name+"'")){l.classList.add('active');}});
+}
+function showSolution(name){
+  document.querySelectorAll('.sol-panel').forEach(p=>p.classList.remove('active'));
+  var panel=document.getElementById('sol-'+name);
+  if(panel)panel.classList.add('active');
+}
+function setActive(el){
+  document.querySelectorAll('.sol-ni').forEach(n=>n.classList.remove('active'));
+  el.classList.add('active');
+}
+</script>
+</body>
+</html>
