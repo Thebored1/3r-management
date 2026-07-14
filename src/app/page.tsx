@@ -258,13 +258,13 @@ export default function Home() {
           </div>
           <div style={{ display: 'grid', gridTemplateRows: '1fr 148px', gap: 12 }}>
             <div style={{ position: 'relative', borderRadius: 10, overflow: 'hidden', minHeight: 200 }}>
-              <img src="/images/unsplash-1.jpg" alt="Across India" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} />
+              <img src="/images/integrated_swm_person.png" alt="Across India" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} />
               <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(43,46,37,0.6), transparent 60%)' }}></div>
               <div style={{ position: 'absolute', left: 0, right: 0, bottom: 0, padding: 16, fontFamily: 'var(--font-ibm-plex-mono)', fontSize: 10.5, letterSpacing: '.06em', color: '#fff' }}>AMRITSAR · SILVASSA · INTEGRATED SWM</div>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
               <div style={{ position: 'relative', borderRadius: 10, overflow: 'hidden' }}>
-                <img src="/images/unsplash-2.jpg" alt="Remote areas" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} />
+                <img src="/images/composting-new.jpg" alt="Remote areas" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} />
                 <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(43,46,37,0.6), transparent 60%)' }}></div>
                 <div style={{ position: 'absolute', left: 0, right: 0, bottom: 0, padding: 16, fontFamily: 'var(--font-ibm-plex-mono)', fontSize: 10.5, letterSpacing: '.06em', color: '#fff' }}>LEH & KARGIL</div>
               </div>
