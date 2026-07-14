@@ -16,7 +16,7 @@ export const data = {
   gallery: [
     { img: '/images/composting-new.jpg', cap: 'LEH & KARGIL · HIGH-ALTITUDE SWM' },
     { img: '/images/unsplash-3.jpg', cap: 'CBG · BIOENERGY FEEDSTOCK' },
-    { img: '/images/amritsar.webp', cap: 'AMRITSAR · SILVASSA · INTEGRATED SWM' }
+    { img: '/images/integrated_swm_facility.png', cap: 'AMRITSAR · SILVASSA · INTEGRATED SWM' }
   ],
   recognition: [
     { img: '/assets/silvassa-swm-logo.png', tag: '2019 · SILVASSA', title: "Prime Minister's Inauguration — Silvassa SWM Project", desc: 'The Silvassa Integrated SWM project was inaugurated by PM Narendra Modi — recognised as the fastest-delivered integrated waste management project in India. PM recently appreciated Silvassa as a model bin-free city, a testament to 7 years of continuous operational excellence by 3R.', badge: '★ PM Inaugurated · Bin-Free City Recognition' },
