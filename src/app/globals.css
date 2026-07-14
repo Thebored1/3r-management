@@ -13,17 +13,17 @@
 }
 
 [data-theme="ocean"] {
-  --sand: #D3DBDD;
-  --panel: #E7ECEC;
-  --card: #F2F5F5;
-  --cardalt: #DEE6E7;
-  --ink: #20303a;
-  --muted: #6a7c84;
-  --faint: #93a2a8;
-  --green: #1f5563;
-  --green2: #2f6f7d;
-  --olive: #4d8592;
-  --line: rgba(32,48,58,0.13);
+  --sand: #E4EAE4;
+  --panel: #F7FAF7;
+  --card: #FFFFFF;
+  --cardalt: #EEF3EE;
+  --ink: #20302a;
+  --muted: #697c70;
+  --faint: #93a89b;
+  --green: #2e6b43;
+  --green2: #3c7d53;
+  --olive: #5a9268;
+  --line: rgba(32,48,40,0.10);
 }
 
 [data-theme="terracotta"] {
