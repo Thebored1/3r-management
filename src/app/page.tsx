@@ -1,12 +1,66 @@
+'use client';
+
 import { data } from '../data/content';
-import React from 'react';
+import React, { useEffect } from 'react';
 
 export default function Home() {
+  useEffect(() => {
+    const nav = document.getElementById('siteNav');
+    if (!nav) return;
+    
+    const apply = () => {
+      if (window.scrollY > 12) {
+        nav.style.background = 'rgba(247,250,250,0.82)';
+        nav.style.backdropFilter = 'blur(12px)';
+        nav.style.borderBottomColor = 'var(--line)';
+      } else {
+        nav.style.background = 'transparent';
+        nav.style.backdropFilter = 'none';
+        nav.style.borderBottomColor = 'transparent';
+      }
+    };
+    
+    apply();
+    window.addEventListener('scroll', apply, { passive: true });
+
+    // Scroll reveal
+    const top = document.getElementById('top');
+    let io: IntersectionObserver | null = null;
+    if (top) {
+      const targets = Array.from(top.children).filter(el => el.tagName === 'SECTION' || el.tagName === 'DIV' || el.tagName === 'FOOTER') as HTMLElement[];
+      targets.forEach((el) => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(28px)';
+        el.style.transition = 'opacity .8s cubic-bezier(.22,.61,.36,1), transform .8s cubic-bezier(.22,.61,.36,1)';
+        el.style.willChange = 'opacity, transform';
+      });
+      const reveal = (el: Element) => {
+        (el as HTMLElement).style.opacity = '1';
+        (el as HTMLElement).style.transform = 'translateY(0)';
+      };
+      io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            reveal(entry.target);
+            io?.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+      targets.forEach(el => io?.observe(el));
+    }
+
+    return () => {
+      window.removeEventListener('scroll', apply);
+      if (io) io.disconnect();
+    };
+  }, []);
+
   return (
-    <div id="top" data-theme="forest" data-imagery="color" data-mood="signature" style={{ background: 'var(--panel)', minHeight: '100vh' }}>
+    <div id="top" data-theme="ocean" data-imagery="color" data-mood="editorial" style={{ background: 'var(--panel)', minHeight: '100vh' }}>
+
       
       {/* NAV */}
-      <nav style={{ position: 'sticky', top: 0, zIndex: 200, background: 'rgba(243,242,236,0.82)', backdropFilter: 'blur(12px)', borderBottom: '1px solid var(--line)' }}>
+      <nav id="siteNav" style={{ position: 'sticky', top: 0, zIndex: 200, background: 'transparent', backdropFilter: 'none', borderBottom: '1px solid transparent', transition: 'background .25s, border-color .25s, backdrop-filter .25s' }}>
         <div style={{ maxWidth: 1440, margin: '0 auto', padding: '15px 40px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
           <a href="#top" style={{ display: 'flex', alignItems: 'center' }}>
             <img src="/images/logo-01.png" alt="3R Management" style={{ height: 34, width: 'auto', display: 'block' }} />
@@ -74,7 +128,7 @@ export default function Home() {
             <div key={i} style={{ background: 'var(--card)', border: '1px solid var(--line)', borderRadius: 8, padding: 12, display: 'flex', flexDirection: 'column' }}>
               <div style={{ position: 'relative', height: 280, borderRadius: 6, overflow: 'hidden' }}>
                 <img src={r.img} alt={r.title} style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', filter: 'saturate(0.85)' }} />
-                <div style={{ position: 'absolute', top: 12, left: 12, background: 'rgba(63,82,50,0.92)', color: '#fff', fontFamily: 'var(--font-ibm-plex-mono)', fontSize: 10, letterSpacing: '.05em', padding: '5px 11px', borderRadius: 999 }}>{r.tag}</div>
+                <div style={{ position: 'absolute', top: 12, left: 12, background: 'var(--green)', color: '#fff', fontFamily: 'var(--font-ibm-plex-mono)', fontSize: 10, letterSpacing: '.05em', padding: '5px 11px', borderRadius: 999 }}>{r.tag}</div>
               </div>
               <div style={{ padding: '20px 12px 12px', display: 'flex', flexDirection: 'column', flex: 1 }}>
                 <h3 style={{ fontSize: 20, fontWeight: 600, lineHeight: 1.22, letterSpacing: '-0.01em', marginBottom: 10 }}>{r.title}</h3>
