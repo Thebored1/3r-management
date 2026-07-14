@@ -6,15 +6,15 @@ export const data = {
     { v: '800 TPD', l: 'Amritsar — active today' }
   ],
   solutions: [
-    { t: 'Integrated Waste Management', tag: 'Flagship capability', d: 'City-wide systems — collection to scientific disposal — under one PPP/concession framework.', img: '/images/integrated-swm.webp' },
+    { t: 'Integrated Waste Management', tag: 'Flagship capability', d: 'City-wide systems — collection to scientific disposal — under one PPP/concession framework.', img: '/images/integrated-new.webp' },
     { t: 'Collection & Transportation', tag: '', d: 'Structured, route-optimised fleet operations tracked via RouteHub in real time.', img: '/assets/collection.png' },
-    { t: 'Bio-CNG / CBG Plants', tag: '', d: 'Organic waste converted to compressed biogas — clean energy from waste, at scale.', img: '/images/unsplash-4.jpg' },
-    { t: 'Composting & MRFs', tag: '', d: 'Aerobic composting and material recovery — diverting waste from landfill, creating value.', img: '/images/composting.jpg' },
-    { t: 'Scientific Landfills', tag: '', d: 'Engineered lined landfills with leachate treatment, gas management, and environmental monitoring.', img: '/images/landfill.jpeg' },
-    { t: 'Sanitation & Wastewater', tag: '', d: 'Loop smart utility pods and ULB wastewater treatment — connected to Ecosmartly.', img: '/images/sanitation.jpg' }
+    { t: 'Bio-CNG / CBG Plants', tag: '', d: 'Organic waste converted to compressed biogas — clean energy from waste, at scale.', img: '/images/biocng-new.jpg' },
+    { t: 'Composting & MRFs', tag: '', d: 'Aerobic composting and material recovery — diverting waste from landfill, creating value.', img: '/images/composting-new.jpg' },
+    { t: 'Scientific Landfills', tag: '', d: 'Engineered lined landfills with leachate treatment, gas management, and environmental monitoring.', img: '/images/landfill-new.jpeg' },
+    { t: 'Sanitation & Wastewater', tag: '', d: 'Loop smart utility pods and ULB wastewater treatment — connected to Ecosmartly.', img: '/images/sanitation-new.jpg' }
   ],
   gallery: [
-    { img: '/images/composting.jpg', cap: 'LEH & KARGIL · HIGH-ALTITUDE SWM' },
+    { img: '/images/composting-new.jpg', cap: 'LEH & KARGIL · HIGH-ALTITUDE SWM' },
     { img: '/images/unsplash-3.jpg', cap: 'CBG · BIOENERGY FEEDSTOCK' },
     { img: '/images/amritsar.webp', cap: 'AMRITSAR · SILVASSA · INTEGRATED SWM' }
   ],

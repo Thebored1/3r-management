@@ -91,14 +91,9 @@ export default function Home() {
           <p style={{ maxWidth: 600, margin: '26px auto 0', fontSize: 16.5, color: 'var(--muted)', lineHeight: 1.7 }}>
             3R designs, builds, and operates end-to-end solid waste management systems across India — from daily collection to scientific landfills. Technology-enabled. Performance-backed. Built to last.
           </p>
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 14, margin: '34px 0 52px', flexWrap: 'wrap' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 16, margin: '34px 0 52px' }}>
             <a href="#solutions" style={{ background: 'var(--green)', color: '#fff', fontSize: 14, fontWeight: 500, padding: '13px 26px', borderRadius: 999 }}>Explore Solutions</a>
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: 10, fontFamily: 'var(--font-ibm-plex-mono)', fontSize: 11, letterSpacing: '.05em', color: 'var(--muted)' }}>
-              <span style={{ display: 'flex' }}>
-                <span style={{ width: 22, height: 22, borderRadius: '50%', background: 'var(--green2)', border: '2px solid var(--cardalt)' }}></span>
-                <span style={{ width: 22, height: 22, borderRadius: '50%', background: 'var(--olive)', border: '2px solid var(--cardalt)', marginLeft: -8 }}></span>
-                <span style={{ width: 22, height: 22, borderRadius: '50%', background: 'var(--green)', border: '2px solid var(--cardalt)', marginLeft: -8 }}></span>
-              </span>
+            <div style={{ fontFamily: 'var(--font-ibm-plex-mono)', fontSize: 11, letterSpacing: '.05em', color: 'var(--muted)' }}>
               CURRENTLY OPERATING · AMRITSAR · SILVASSA · LEH · KARGIL
             </div>
           </div>
