@@ -247,7 +247,7 @@ export default function Home() {
               <a href="mailto:connect@3rmanagement.in" style={{ background: '#fff', color: 'var(--green)', fontSize: 17.5, fontWeight: 600, padding: '16px 36px', borderRadius: 999 }}>Get in Touch ↗</a>
               <a href="mailto:connect@3rmanagement.in" style={{ background: 'rgba(255,255,255,0.15)', border: '1px solid rgba(255,255,255,0.4)', color: '#fff', fontSize: 17.5, fontWeight: 600, padding: '16px 36px', borderRadius: 999 }}>Download Credentials</a>
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr', gap: 16, marginTop: 42, paddingTop: 36, borderTop: '1px solid rgba(255,255,255,0.22)' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '32px 24px', marginTop: 42, paddingTop: 36, borderTop: '1px solid rgba(255,255,255,0.22)' }}>
               {data.stats.map((s, i) => (
                 <div key={i}>
                   <div style={{ fontSize: 34, fontWeight: 600, letterSpacing: '-0.02em', color: '#fff' }}>{s.v}</div>
