@@ -17,13 +17,13 @@
   --panel: #F7FAF7;
   --card: #FFFFFF;
   --cardalt: #EEF3EE;
-  --ink: #20302a;
-  --muted: #697c70;
-  --faint: #93a89b;
-  --green: #2e6b43;
-  --green2: #3c7d53;
-  --olive: #5a9268;
-  --line: rgba(32,48,40,0.10);
+  --ink: #111a16;
+  --muted: #425248;
+  --faint: #63776a;
+  --green: #1a522f;
+  --green2: #24633b;
+  --olive: #41704e;
+  --line: rgba(32,48,40,0.15);
 }
 
 [data-theme="terracotta"] {
